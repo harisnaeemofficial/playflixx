@@ -1,3 +1,3 @@
-# hydraflix.github.io
+# playflix.github.io
 
-Brings out the hydra in you!
+Watch movies instantly powered by Hydraflix
