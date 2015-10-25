@@ -47,11 +47,10 @@ function f_play(id,id2,id3) {
 							$("track#hydraflix-es").attr("src", loadedUrl);
 						}
 						//var html_player = "";
-						
-						$("#images").html("<video id='example_video_" + id + num_aleatorio +"'  class='video-js vjs-default-skin' width='800' height='400' data-setup='{}'><source id='source" + id + num_aleatorio + "' src='' type='video/mp4' ><track id='hydraflix-es' kind='subtitles' src='"+loadedUrl+"' srclang='es' label='ES' charset='utf-8' type='text/srt'></track></video><br><div id='close' style='background: url(http://i.imgur.com/P7Svq.png);position: absolute; top: 50%; left: 50%; margin-top: -250px; margin-left: 400px;' onclick='closeThis(); unscrollDetails();'></div>");
+
 	
 						
-						$("#fullscreen_player").attr('class','fullscreen_player_in');
+
 
 
 
@@ -61,18 +60,18 @@ function f_play(id,id2,id3) {
 							var json = $.xml2json(xml);
 							console.log(json);
 							console.log(json.trackList.track.location);
-						_V_(
-							('example_video_' + id + num_aleatorio),
-							{
-								'autoplay': true,
-								'controls': true,
-								'preload': 'auto',
-								'src': "http://video-js.zencoder.com/oceans-clip.mp4"
-							}  
-						);							
-							$("#source" + id + num_aleatorio).attr("src", "http://video-js.zencoder.com/oceans-clip.mp4");//json.trackList.track.location);
-
+							$("#images").html("<video id='example_video_" + id + num_aleatorio +"'  class='video-js vjs-default-skin' width='800' height='400' data-setup='{}'><source src='"+json.trackList.track.location+"' type='video/mp4' ><track id='hydraflix-es' kind='subtitles' src='"+loadedUrl+"' srclang='es' label='ES' charset='utf-8' type='text/srt'></track></video><br><div id='close' style='background: url(http://i.imgur.com/P7Svq.png);position: absolute; top: 50%; left: 50%; margin-top: -250px; margin-left: 400px;' onclick='closeThis(); unscrollDetails();'></div>");							
+							_V_(
+								('example_video_' + id + num_aleatorio),
+								{
+									'autoplay': true,
+									'controls': true,
+									'preload': 'auto',
+									'src': "http://video-js.zencoder.com/oceans-clip.mp4"
+								}  
+							);							
       					}); // .playlist.tracklist.track.location	
+      											$("#fullscreen_player").attr('class','fullscreen_player_in');
 					});
 					if ( i == 0 ) return false;
 				//}); 
