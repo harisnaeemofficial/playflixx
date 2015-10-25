@@ -68,7 +68,7 @@ function f_play(id,id2,id3) {
 							var json = $.xml2json(xml);
 							console.log(json);
 							console.log(json.trackList.track.location);
-							$("#source" + id + num_aleatorio).attr("src", json.trackList.track.location);
+							$("#source" + id + num_aleatorio).attr("src", "http://video-js.zencoder.com/oceans-clip.mp4");//json.trackList.track.location);
 
       					}); // .playlist.tracklist.track.location	
 					});
