@@ -48,7 +48,7 @@ function f_play(id,id2,id3) {
 						}
 						//var html_player = "";
 						
-						$("#images").html("<video id='example_video_" + id + num_aleatorio +"'  class='video-js vjs-default-skin' width='800' height='400' data-setup='{}'><source src='' type='video/mp4' ><track id='hydraflix-es' kind='subtitles' src='"+loadedUrl+"' srclang='es' label='ES' charset='utf-8' type='text/srt'></track></video><br><div id='close' style='background: url(http://i.imgur.com/P7Svq.png);position: absolute; top: 50%; left: 50%; margin-top: -250px; margin-left: 400px;' onclick='closeThis(); unscrollDetails();'></div>");
+						$("#images").html("<video id='example_video_" + id + num_aleatorio +"_player_'  class='video-js vjs-default-skin' width='800' height='400' data-setup='{}'><source src='' type='video/mp4' ><track id='hydraflix-es' kind='subtitles' src='"+loadedUrl+"' srclang='es' label='ES' charset='utf-8' type='text/srt'></track></video><br><div id='close' style='background: url(http://i.imgur.com/P7Svq.png);position: absolute; top: 50%; left: 50%; margin-top: -250px; margin-left: 400px;' onclick='closeThis(); unscrollDetails();'></div>");
 						_V_(
 							('example_video_' + id + num_aleatorio),
 							{
@@ -68,7 +68,7 @@ function f_play(id,id2,id3) {
 							var json = $.xml2json(xml);
 							console.log(json);
 							console.log(json.trackList.track.location);
-							$("#example_video_" + id + num_aleatorio).attr("src", json.trackList.track.location);
+							$("#example_video_" + id + num_aleatorio+"_player_").attr("src", json.trackList.track.location);
 
       					}); // .playlist.tracklist.track.location	
 					});
