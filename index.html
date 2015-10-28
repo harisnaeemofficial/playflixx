@@ -1,117 +1,921 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<!--META-->
-		<!--/META-->
-		<title>Hydraflix - pre-alpha 0.1</title>
-		<meta property="og:title" content="Hydraflix | Brings out the hydra in you!" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="http://hydraflix.github.io" />
-		<meta property="og:image" content="http://i.imgur.com/UptCSMk.png" />		
-		<!--CSS-->
-		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"><!--Yeap, bootstrap-->
-		<link href="css/simple-sidebar.css" rel="stylesheet">
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>	
-		<link href="video-js/video-js.css" rel="stylesheet"><!--keep under the 4.11.4 for .srt support, if you upgrade fix that, bitch!-->
-		<link href="css/hydraflix-main.css" rel="stylesheet"><!--#ToDo: traslate it to a .less file-->
-		<!--/CSS-->
-		<!--JS-->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>	
-		<script type="text/javascript" src="js/jquery.xml2json.js"></script>
-		<script type="text/javascript"  src="video-js/video.js"></script><!--keep under the 4.11.4 for .srt support, if you upgrade fix that, bitch!-->
-		<script type="text/javascript" src="js/archive.js"></script><!--this make the zip magic-->
-		<!--/JS-->
-	</head>
-	<body>
-		<!--
-		<a href="#menu-toggle" id="menu-toggle" style="position: fixed; top: 0px; left: 0px; z-index: 1001;">
-			<img src="http://i.imgur.com/VtJPeAi.png">
-		</a>
-		<div id="wrapper" class="toggled">
-		-->
-	        <!-- Sidebar -->
-	        <!--
-	        <div id="sidebar-wrapper" style="overflow-x: hidden;">
-	            <ul class="sidebar-nav">
-	                <li class="sidebar-brand" style="margin-bottom:10px;">
-	                    <a href="#" style="text-align:center;">
-	                       <img src="http://i.imgur.com/edy6DsZ.png">
-	                    </a>
-	                </li>
-	                -->
-	                <!--
-	                <li>
-	                    <a href="#">Dashboard</a>
-	                </li>
-	                <li>
-	                    <a href="#">Shortcuts</a>
-	                </li>
-	                <li>
-	                    <a href="#">Overview</a>
-	                </li>
-	                <li>
-	                    <a href="#">Events</a>
-	                </li>
-	                <li>
-	                    <a href="#">About</a>
-	                </li>
-	                <li>
-	                    <a href="#">Services</a>
-	                </li>
-	                <li>
-	                    <a href="#">Contact</a>
-	                </li>
-	                -->
-	                <!--
-	            </ul>
-	        </div>
-	        -->
-	        <!-- /#sidebar-wrapper -->
 
-	        <!-- Page Content -->
-	        <!--<div id="page-content-wrapper">-->
-				<!--PLAYER SECTION-->
-				<div id="fullscreen_player">
-				  	<div id="images"></div>
-				</div>
-				<!--/PLAYER SECTION-->
-				<!--DETAILS SECTION-->
-				<div id="fullscreen_detail">
-				  	<div id="images_detalle"></div>
-				</div>
-				<!--/DETAILS SECTION-->
-				<!--CATALOGUE-->
-				<div class="bg-overlay"></div>
-				<div id="movies" class="contentContainer row"></div>
-				<!--/CATALOGUE-->
-	        <!--</div>-->
-	        <!-- /#page-content-wrapper -->
+<!doctype html>
+<html lang="en">
+  
+  
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Hola Media Player</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Access sites censored in your country and accelerate your Internet with Hola – Free!">
+<meta name="p:domain_verify" content="46e0fba547ae8266503fc0ea165e49ad">
+<meta itemprop="name" content="Hola Better Internet – Access censored sites">
+<meta itemprop="description" content="Access sites censored in your country and accelerate your Internet with Hola – Free!">
+<meta itemprop="image" content="https://hola.org/img/hola.png">
+<meta itemprop="price" content="Free">
+<meta property="fb:app_id" content="568040619933060">
+<meta property="og:type" content="company">
+<meta property="og:title" content="Hola Better Internet – Access censored sites">
+
+<meta property="og:image" content="https://hola.org/img/hola.png">
+<meta property="og:url" content="https://hola.org/">
+
+<meta property="og:description" content="Access sites censored in your country and accelerate your Internet with Hola – Free!">
+<meta property="og:site_name" content="Hola Better Internet - Free VPN, Secure Browsing, Unrestricted Access">
+<link rel="canonical" href="https://hola.org/mplay">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://hola.org/css/hola.css?md5=211914-4fc4cc38">
+<link rel="publisher" href="https://plus.google.com/113076818286953987497">
+<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/gkojfkhlekighikafcpjkiklfbnlmeio">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic">
 
 
-		<!--</div>--><!-- /#wrapper -->
-		<!--JS-->
-		<script type="text/javascript" src="js/catalogue.js"></script>
-		<script type="text/javascript" src="js/player.js"></script>
-		<script type="text/javascript" src="js/details.js"></script>
-	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	    <!-- Menu Toggle Script -->
-	    <script>
-	    $("#menu-toggle").click(function(e) {
-	        e.preventDefault();
-	        $("#wrapper").toggleClass("toggled");
-	    });
-	    </script>	    	
-	    <!-- /#Menu Toggle Script -->
-		<!--/JS-->
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
-		  ga('create', 'UA-69226061-1', 'auto');
-		  ga('send', 'pageview');
-		
-		</script>		
-	</body>
+<style id="style_framebust">body { display: none !important; }</style>
+<script>
+if (top.location.hostname==location.hostname)
+{
+    var style_framebust = document.getElementById('style_framebust');
+    style_framebust.parentNode.removeChild(style_framebust);
+}
+else
+    top.location = self.location;
+</script>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic">
+    <link rel="stylesheet" href="https://hola.org/css/mp_torrents.css?md5=9206-fbf3ae25">
+    <link rel="stylesheet" href="https://hola.org/css/mp_download.css?md5=5226-2181407f">
+    <link rel="stylesheet" href="https://hola.org/svc/pub/css/mp_video.css?md5=122281-b615261d">
+    <link rel="stylesheet" href="https://hola.org/svc/pub/css/mp_progress.css?md5=21903-fab7c285">
+    <link rel="stylesheet" href="https://hola.org/css/mp_promo.css?md5=47125-f7b77c06">
+    <link rel="stylesheet" href="https://hola.org/css/mplay.css?md5=31197-1cce437b">
+  </head>
+  <body class="mplay-page mp_torrents mp_download">
+
+    <video width="400" controls><source src="http://127.0.0.1:6880/torrents/stream/DDF65502DD6719CFFFCD2461F348A6DC95F9D85E/Spy.2015.720p.BluRay.x264.YIFY.mp4" type="video/mp4"></video>
+
+    
+    <div class="navbar navbar-default navbar_new navbar-hola-org" role="navigation">
+  <div class="container navbar-wrap">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="https://hola.org/img/hola_nav_logo.svg?md5=4205-00d7563d" alt="Bypass Internet censorship & Speed up your web browsing – Hola">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <div class="user_nav_container navbar-right"></div>
+      <ul class="links_nav_container nav navbar-nav navbar-right">
+        <li><a href="/">VPN</a></li>
+        <li><a href="/player">Streamer</a></li>
+        <li><a href="/about_hola">About</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div id="android_pre_loading" class="android-pre-loading">
+        <svg id="torprogress" height="100%" width="100%" viewBox="0 0 750 422" preserveAspectRatio="xMidYMin meet">
+  <g transform="translate(375,211)">
+    <g class="progress-data">
+      <g id="stepper">
+        <g id="aperture_android" transform="rotate(-20)">
+          <g class="spinner-android" transform="rotate(30)">
+            <path d="M67,0 A67,67 0 0,1 0,67 A67,67 0 0,1 -67 0 A67,67 0 0,1 0,-67 A67,67 0 0,1 58,-33" />
+          </g>
+          <g transform="scale(-1,1)">
+            <g class="spinner-android" transform="rotate(30)">
+              <path d="M77,0 A77,77 0 0,1 0,77 A77,77 0 0,1 -77 0 A77,77 0 0,1 0,-77 A77,77 0 0,1 66,-38" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <text id="status" x="0" y="7" font-size="18" text-anchor="middle" class="displayed">Loading...</text>
+    </g>
+  </g>
+</svg>
+
+    </div>
+    <div class="wrapper global_video_player mp_promo" style="visibility: hidden;">
+      <div class="ff-loading-svc" style="display:none">
+  <div class="firefox-waiting">
+    <div class="wait-after-install">
+      <h4>Loading...</h4>
+      <h5>Preparing to launch the Media Player for the first time</h5>
+    </div>
+    <div class="wait-for-plugin" style="display: none;">
+      <h4>Loading...</h4>
+      <h5>Preparing to launch the Media Player</h5>
+    </div>
+    <div class="need-svc-install mp_promo" style="display: none;">
+      <h4>Need Media Player Engine</h4>
+      <div class="gethola"><a href="http://hola.org/player_download" target="_top" class="download_link">Install Media Player</a>
+      </div>
+    </div>
+    <div class="progress-section">
+      <div id="sprogress" class="circle_progress">@</div>
+      <h6>This could take a minute...</h6>
+    </div>
+  </div>
+</div>
+
+      <div id="player" class="hola-embedded-player embedded-player hide-incompatible" style="display: none;">
+        <iframe id="player_iframe" width="770" height="500" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="hide-incompatible responsive_all play_install">
+          <div class="emb-invite">
+  <div class="emb-invite-wrapper">
+    <div class="title-wrapper">
+      <div class="hola-logo"></div>
+      <p id="emb_mov_title"></p>
+      <p class="instruction"></p>
+      <p class="incompatible">To stream</p>
+    </div>
+    <div class="center-part">
+      <div class="download-button-wrapper">
+        <img src="https://hola.org/img/streamer/hola_film.svg?md5=17462-2984252e" width="100%">
+        <img class="download_link" src="https://hola.org/img/streamer/play_button.svg?md5=1245-8ecde8fc" height="55%">
+      </div>
+      <p class="instruction">
+        By installing this application you agree you have read and accepted <a href="/legal_sla" target="_top">Hola's terms of use</a> and <a href="/legal_privacy" target="_top">privacy policy</a>
+      </p>
+    </div>
+    <div class="installing">
+      <svg class="spinner-new" width="30px" height="30px" viewBox="-54 -54 107 107">
+        <circle class="rail" cx="0" cy="0" r="50"/>
+        <circle class="train" cx="0" cy="0" r="50"/>
+      </svg>
+      <p class="waiting-init">
+        This might take a minute
+      </p>
+    </div>
+
+    <div class="download-start">
+      <p class="waiting">
+        When the download finishes, <strong>install <span class="exename">hola.exe</span></strong><br>
+        <a class="exelink" href="#">Click here</a> if your download doesn't start
+      </p>
+      <p class="waiting-ff">
+        Click the <strong>"Allow"</strong> button, then <strong>"Install now"</strong>
+        to complete installation
+      </p>
+      <div class="download_icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="23px"
+height="24px" viewBox="0 0 23 24" enable-background="new 0 0 23 24" xml:space="preserve">
+<path class="arrow" fill="#FFFFFF" d="M11.2,14.8L6.6,9.2c0,0-0.7-0.7,0.1-0.7h2.6V0.4c0,0-0.1-0.4,0.5-0.4h3.6c0.4,0,0.4,0.3,0.4,0.3v8h2.4
+	c0.9,0,0.2,0.7,0.2,0.7s-3.9,5.2-4.4,5.8C11.6,15.2,11.2,14.8,11.2,14.8L11.2,14.8z M11.2,14.8"/>
+	<path class="line" fill="#FFFFFF" d="M19.8,15.3v5.5H3.2v-5.5H0v7.1C0,23.3,0.7,24,1.6,24h19.8c0.9,0,1.6-0.7,1.6-1.6v-7.1H19.8z M19.8,15.3"/>
+</svg>
+
+      </div>
+    </div>
+    <div class="fake-controls">
+      <img src="https://hola.org/img/streamer/player_controls.svg?md5=6015-2c86702b" width="100%">
+      <div class="title"></div>
+    </div>
+    <p class="waiting-success">
+      Success!
+    </p>
+  </div>
+</div>
+
+      </div>
+      <div class="faux_player hide-incompatible">
+        <!-- XXX mark: this blob of HTML comes from mplayer, pending cleanup -->
+<div id="mp_video" class="inactive">
+  <div class="video-js vjs-controls-disabled vjs-has-started vjs-paused vjs-user-inactive" id="mp_video_player" style="width: 768px; height: 432px;">
+    <div class="hola-logo"><div></div></div>
+    <div class="mov-title" id="mov_title">Hola Media Player</div>
+    <a class="gethola start_play main-dl-nostyles download_link">
+      <svg height="46px" width="46px" viewBox="0 0 50 50">
+    <g id="unmorph">
+        <path d="M 19.5,18 30,25 19.5,32 19.5,32 Z"/>
+        <path d="M 19.5,18 22.5,18 22.5,32 19.5,32 Z"/>
+    </g>
+</svg>
+
+    </a>
+    <div class="fake-controls">
+      <img src="https://hola.org/img/streamer/player_controls.svg?md5=6015-2c86702b" width="100%">
+      <div class="title"></div>
+    </div>
+    <div id="controlbar">
+  <div style="display:none;" id="vlc_mousesink"></div>
+  <div class="control button play-pause">
+    <svg height="46px" width="46px" viewBox="0 0 50 50">
+    <g id="morph">
+        <path d="M 19.5,18 22.5,18 22.5,32 19.5,32 Z"/>
+        <path d="M 27.5,18 30.5,18 30.5,32 27.5,32 Z"/>
+    </g>
+</svg>
+
+  </div>
+  <div class="control button b-volume">
+    <div id="volume_placeholder"></div>
+  </div>
+  <div class="control progressbar shortmovie">
+    <div id="bar_title"></div>
+    <svg id="progress" height="46px" viewBox="-3 0 106 50" preserveAspectRatio="none">
+  <path id="total" d="m 0,25 100,0" />
+  <path id="loaded" d="m 0,25 0,0" />
+  <path id="played" d="m 0,25 0,0" />
+  <g id="tracker" transform="translate(-50)">
+    <g id="trackdot" transform="translate(-6) scale(0.25,1)" style="opacity:0.6">
+      <path d="M25,33c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8S29.4,33,25,33z" style="fill:#777" />
+      <path d="M25,19c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S21.7,19,25,19 M25,15c-5.5,0-10,4.5-10,10s4.5,10,10,10 c5.5,0,10-4.5,10-10S30.5,15,25,15L25,15z" style="fill:#ccc" />
+    </g>
+  </g>
+</svg>
+
+    <div id="slider_zone">
+      <svg id="slider" viewBox="0 0 50 50" width="50px" height="50px">
+    <path d="M25,33c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8S29.4,33,25,33z" style="fill:#00b7f1" />
+    <path d="M25,19c3.3,0,6,2.7,6,6s-2.7,6-6,6s-6-2.7-6-6S21.7,19,25,19 M25,15c-5.5,0-10,4.5-10,10s4.5,10,10,10   c5.5,0,10-4.5,10-10S30.5,15,25,15L25,15z" style="fill:#fff" />
+</svg>
+
+      <div id="tracker_tooltip" class="hidden" data-position="0:00:00">
+      </div>
+    </div>
+    <svg height="46px" width="120px" viewBox="0 0 120 50">
+    <text id="mp_video_pos" x="120" y="31" text-anchor="end"><tspan>00:00</tspan><tspan>/</tspan><tspan>00:00</tspan></text>
+</svg>
+
+  </div>
+  <div class="control button b-share">
+    <svg x="0px" y="0px" width="46px" height="46px" viewBox="-2 -2 46 46">
+  <path fill="#FFFFFF" d="M25,23c-0.8,0-1.4,0.3-2,0.8l-5.1-3.1C18,20.5,18,20.2,18,20c0-0.2,0-0.5-0.1-0.7l5.1-3.1 c0.5,0.5,1.2,0.8,2,0.8c1.7,0,3-1.3,3-3c0-1.7-1.3-3-3-3c-1.7,0-3,1.3-3,3c0,0.2,0,0.5,0.1,0.7L17,17.7c-0.5-0.5-1.2-0.8-2-0.8c-1.7,0-3,1.3-3,3s1.3,3,3,3c0.8,0,1.4-0.3,2-0.8l5.1,3.1C22,25.5,22,25.8,22,26c0,1.7,1.3,3,3,3c1.7,0,3-1.3,3-3C28,24.3,26.6,23,25,23z"/>
+</svg>
+
+  </div>
+  <div class="control button b-settings">
+    <svg height="46px" width="46px" viewBox="0 0 50 50">
+    <path d="M35,26.1v-2.2h-2.6c-0.2-1.3-0.7-2.4-1.4-3.4l1.8-1.8l-1.6-1.6l-1.8,1.8c-1-0.7-2.1-1.1-3.3-1.3V15h-2.2v2.6 c-1.3,0.2-2.4,0.7-3.4,1.4l-1.8-1.8l-1.6,1.6l1.8,1.8c-0.7,1-1.1,2.1-1.3,3.3H15v2.2h2.6c0.2,1.3,0.7,2.4,1.4,3.4l-1.8,1.8l1.6,1.6  l1.8-1.8c1,0.7,2.1,1.1,3.3,1.3V35h2.2v-2.6c1.3-0.2,2.4-0.7,3.4-1.4l1.8,1.8l1.6-1.6l-1.8-1.8c0.7-1,1.1-2.1,1.3-3.3H35z M25,29.1  c-2.2,0-4.1-1.8-4.1-4.1s1.9-4.1,4.1-4.1s4.1,1.8,4.1,4.1S27.3,29.1,25,29.1z" />
+</svg>
+
+  </div>
+  <div class="control button b-subs">
+    <div class="icon">
+      <div class="number"></div>
+    </div>
+  </div>
+  <div class="control button toggle-fullscreen">
+    <svg height="46px" width="46px" viewBox="0 0 50 50">
+    <path d="M29.8,30.6h-9.6c-0.5,0-0.8-0.4-0.8-0.8v-9.6c0-0.5,0.4-0.8,0.8-0.8h9.6c0.5,0,0.8,0.4,0.8,0.8v9.6 C30.6,30.3,30.3,30.6,29.8,30.6z" />
+</svg>
+<svg height="46px" width="46px" viewBox="0 0 50 50" class="mode-embedded">
+    <path d="M16,20.8c-0.6,0-1-0.4-1-1V16c0-0.6,0.4-1,1-1h3.8c0.6,0,1,0.4,1,1s-0.4,1-1,1H17v2.8 C17,20.4,16.6,20.8,16,20.8z" />
+    <path d="M34,20.8c-0.6,0-1-0.4-1-1V17h-2.8c-0.6,0-1-0.4-1-1s0.4-1,1-1H34c0.6,0,1,0.4,1,1v3.8 C35,20.4,34.6,20.8,34,20.8z" />
+    <path d="M34,35h-3.8c-0.6,0-1-0.4-1-1s0.4-1,1-1H33v-2.8c0-0.6,0.4-1,1-1s1,0.4,1,1V34C35,34.6,34.6,35,34,35z" />
+    <path d="M19.8,35H16c-0.6,0-1-0.4-1-1v-3.8c0-0.6,0.4-1,1-1s1,0.4,1,1V33h2.8c0.6,0,1,0.4,1,1S20.4,35,19.8,35z" />
+</svg>
+<svg height="46px" width="46px" viewBox="0 0 50 50" class="mode-fullscreen">
+    <path d="M16.8,17.8H13c-0.6,0-1-0.4-1-1s0.4-1,1-1h2.8V13c0-0.6,0.4-1,1-1s1,0.4,1,1v3.8 C17.8,17.4,17.4,17.8,16.8,17.8z"/>
+    <path d="M37,17.8h-3.8c-0.6,0-1-0.4-1-1V13c0-0.6,0.4-1,1-1s1,0.4,1,1v2.8H37c0.6,0,1,0.4,1,1S37.6,17.8,37,17.8z" />
+    <path d="M33.2,38c-0.6,0-1-0.4-1-1v-3.8c0-0.6,0.4-1,1-1H37c0.6,0,1,0.4,1,1s-0.4,1-1,1h-2.8V37 C34.2,37.6,33.8,38,33.2,38z"/>
+    <path d="M16.8,38c-0.6,0-1-0.4-1-1v-2.8H13c-0.6,0-1-0.4-1-1s0.4-1,1-1h3.8c0.6,0,1,0.4,1,1V37 C17.8,37.6,17.4,38,16.8,38z"/>
+</svg>
+
+  </div>
+  <div class="newprogressbar">
+    <div class="buffered"></div>
+    <div class="watched"></div>
+    <div class="ghosttracker"></div>
+    <div class="ghosttooltip"></div>
+    <div class="newtracker"></div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="play_dl_block heading-block" style="display: none;">
+    <h1>Thanks for downloading Hola</h1>
+    <h4>If your download doesn't start, please click the button below</h4>
+    <a class="download-again" href="?">Download again</a>
+</div>
+
+      <div class="cannot-install" style="display:none">
+  <div class="container">
+    <h1>Oopsy daisy!</h1>
+    <h2>Please open this page using:</h2>
+    <div class="browser">Hola Browser</div>
+  </div>
+</div>
+<div class="coming-soon" style="display:none">
+  <div class="container">
+    <h1>Coming soon</h1>
+    <h4>for mobile, Mac and Linux</h4>
+    <h5>Currently compatible with Windows computers:</h5>
+    <ul class="supported">
+      <li class="sup-firefox"><span class="pic-firefox"></span>Firefox</li>
+      <li class="sup-chrome"><span class="pic-chrome"></span>Chrome</li>
+      <li class="sup-windows"><span class="pic-windows"></span>Windows</li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+    <footer class="footer_new">
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3 logo_col">
+        <div class="logo"><img src="https://hola.org/www/util/pub/img/footer_logo.svg?md5=3622-7580af8b" width="106" height="43"></div>
+        <p>© 2015 Hola Ltd. All rights reserved.</p>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <ul>
+          <li class="category">General</li>
+          <li><a href="/about_hola">About</a></li>
+          <li><a href="/publishers">Publishers</a></li>
+          <li><a href="/cdn">CDN</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/jobs">Careers</a></li>
+          <li><a href="http://luminati.io">Hola for business (Luminati)</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-6 col-sm-3">
+        <ul>
+          <li class="category">Policies & press</li>
+          <li><a href="/legal_privacy">Privacy</a></li>
+          <li><a href="/legal_sla">Terms</a></li>
+          <li><a href="/legal_dmca">DMCA policy</a></li>
+          <li><a href="/legal_publishers">Publisher TOS</a></li>
+          <li><a href="/press_kit">Press kit</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-3 contact_col">
+        <div class="category">Spread the word</div>
+        <div class="social_buttons">
+          <a href="https://www.facebook.com/HolaBetterInternet" class="share-facebook">Share Hola unblocker on Facebook</a>
+          <a href="https://twitter.com/hola_org" class="share-twitter">Tweet about the Hola unblocker</a>
+          <a href="https://plus.google.com/+HolaOrg/posts" class="share-googleplus">Tell about Hola unblocker to your Google+ circles</a>
+          <a href="https://www.youtube.com/channel/UCmOUwA-Dx8KUeIhJcS9-GzA/feed" class="share-youtube">See Hola on Youtube</a>
+        </div>
+        <div class="category">Get in touch</div>
+        <a href="mailto:help@hola.org" class="pull-left mailto_link">help@hola.org</a>
+        <a href="mailto:abuse@hola.org" class="pull-left mailto_link">Report abuse</a>
+        <a href="/contact" class="pull-left mailto_link">Contact us</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script>
+        (function(){
+            // LICENSE_CODE ZON
+'use strict'; /*jslint browser:true*/
+(function(){
+var E = window.hola_min_require = {};
+E.module_registry = {};
+
+function get_args(requirements){
+    var args = [], t;
+    for (var i=0; i<requirements.length; i++)
+    {
+        if (!(t = E.module_registry[requirements[i]]))
+            throw new Error('min_require: missing module: '+requirements[i]);
+        args.push(t);
+    }
+    return args;
+}
+
+function define(name, requirements, init){
+    // XXX mark hack: this needs to be changed
+    if (arguments.length==1 && typeof name=='function')
+    {
+        requirements = name;
+        name = '/util/user_agent.js';
+    }
+    if (typeof name!='string')
+        throw new Error('min_require: module name is needed');
+    if (init===undefined && requirements.pop===undefined)
+    {
+        init = requirements;
+        requirements = [];
+    }
+    if (typeof init!='function')
+        return void(E.module_registry[name] = init);
+    E.module_registry[name] = init.apply(null, get_args(requirements));
+}
+define.amd = define.min_require = true;
+
+function require(requirements, fn){
+    fn.apply(null, get_args(requirements)); }
+require.min_require = true;
+
+E.give_modules = function(){
+    if (!window.define||window.define.min_require)
+        throw new Error('min_require: cannot give modules');
+    for (var m in E.module_registry)
+    {
+        if (!E.module_registry.hasOwnProperty(m))
+            continue;
+        window.define(m, function(n){
+            return function(){ return E.module_registry[n]; };
+        }(m));
+    }
+};
+
+E.uninstall = function(){
+    if (window.define.min_require)
+        delete window.define;
+    if (window.require.min_require)
+        delete window.require;
+};
+window.define = window.define||define;
+window.require = window.require||require;
+}());
+
+            // LICENSE_CODE ZON
+'use strict'; /*jslint browser:true*/
+define('hola_opt', function(){
+    var opt;
+    /*jslint ignore:start*/
+    opt = {"version":"1.10.181","user_ip":3188773296,"user_country":"AR","notify_upgrade_min_version":"1.2.676","www_config":{"faq_support_active":false,"country_message_active":false,"country_messages":{"IL":"Check out <a href=\"//hola.org/premium\">Hola Premium</a> for Israel!"},"purechat_active":false,"vpn_signup_require":false,"svc_check":false}};
+    /*jslint ignore:end*/
+    if (typeof window.ga=='function')
+    {
+        window.ga(function(tracker){
+            opt.ga_client_id = tracker.get('clientId'); });
+    }
+    return opt;
+});
+
+            // LICENSE_CODE ZON
+'use strict'; /*jshint browser:true*/
+(function(){
+var chrome = window.chrome;
+var hola = window.hola = window.hola||{};
+var E = hola.base = {};
+function _zerr(){
+    if (typeof window!='object' || !window.console || !window.console.error)
+        return;
+    Function.prototype.apply.bind(window.console.error,
+        window.console)(arguments);
+}
+
+E.is_mp = function(){
+    return /^(http|https):\/\/(hola.org|client.h-cdn.com)\/be_mp_popover/i
+        .test(location.href);
+};
+
+E.is_be = function(){
+    return window.is_tpopup || top.be_test_page ||
+        /^(chrome-extension|resource|file):\/\//.test(location.href);
+};
+
+function uri_comp(s){ return encodeURIComponent(s).replace(/%20/g, '+'); }
+
+// XXX arik: sync pkg/svc/pub/be_base.js <-> www/hola/pub/player_loader.js
+function qs(param, opt){
+    var uri = '';
+    if (!param)
+        return uri;
+    opt = opt||{};
+    var _uri_comp = opt.space_plus ? uri_comp : encodeURIComponent;
+    for (var i in param)
+    {
+	var val = param[i];
+	if (val===null)
+	    continue;
+        uri += (!uri ? '' : '&')+_uri_comp(i)+'='+_uri_comp(val);
+    }
+    return uri;
+}
+
+var chrome_details = chrome && chrome.app && chrome.app.getDetails &&
+    chrome.app.getDetails();
+var perr_url = '1'==='1' && 'perr.hola.org' || 'perr.hola.org';
+E.defaults = {
+    conf: {url_ccgi: 'https://client.hola.org/client_cgi',
+        url_perr: 'https://'+perr_url+'/client_cgi', type: 'unknown',
+        browser: {firefox: !chrome}},
+    zon_config: {CONFIG_MAKEFLAGS: '',
+        ZON_VERSION: chrome_details ? chrome_details.version : '0.0.0'}
+};
+
+E.get_conf = function(){ return window.conf||E.defaults.conf; };
+E.get_zon_config = function(){
+    return window.zon_config||E.defaults.zon_config; };
+
+// XXX arik: sync pkg/svc/pub/be_base.js <-> www/hola/pub/player_loader.js
+E.raw_perr = function raw_perr(opt){
+    try {
+        var url = E.get_conf().url_perr+'/perr';
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url+'?'+qs(opt, {space_plus: true}));
+        xhr.send(null);
+    } catch(e){ _zerr('raw_perr failed '+e.stack); }
+};
+
+E.perr_prepare = function(opt){
+    var build = E.build_info();
+    /* XXX arik: better to do deep copy of opt before changing it */
+    try {
+        opt.uuid = opt.uuid ||
+            (window.hola_extension_info&&window.hola_extension_info.uuid) ||
+            localStorage.getItem('uuid');
+    } catch(err){ _zerr('perr failed '+err.stack); }
+    opt.cid = opt.cid||(window.hola_svc_info&&window.hola_svc_info.cid);
+    opt.rmt_ver = build.server_version;
+    opt.ver = build.version;
+    opt.browser = opt.browser||E.browser();
+    opt.build = opt.build||E.build();
+    return opt;
+};
+
+E.perr_once_cache = {};
+E.perr_once = function(opt){
+    opt = E.perr_prepare(opt);
+    var id = opt.id, info = opt.info;
+    var holder = E.perr_once_cache[id] = E.perr_once_cache[id]||{};
+    if (info in holder)
+        return holder[info];
+    var key = id+'.'+info;
+    var item;
+    try { item = localStorage.getItem(key); }
+    catch(err){ _zerr('localStorage.getItem failed'); }
+    if (item===null)
+    {
+        item = E.raw_perr(opt)||0;
+        try { localStorage.setItem(key, item); }
+        catch(err){ _zerr('localStorage.setItem failed'); }
+    }
+    return holder[info] = item;
+};
+
+E.perr = function perr(opt){ return E.raw_perr(E.perr_prepare(opt)); };
+
+/* XXX arik: sync be_base.js <-> be_util.js (need to rm code duplication) */
+var check_opera = /\bOPR\b\/(\d+)/i;
+E.browser = function(){
+    var conf = E.get_conf();
+    var ua = navigator.userAgent;
+    var opera = check_opera.exec(ua);
+    return conf.browser.firefox ? 'firefox' :
+        conf.browser.torch ? 'torch' :
+        conf.browser.opera||(opera && !!opera[1]) ? 'opera' : 'chrome';
+};
+
+/* XXX arik: sync be_base.js <-> be_util.js (need to rm code duplication) */
+E.build_info = function(){
+    var rmt, mode;
+    if (window.RMT)
+	rmt = window.RMT;
+    else if (window.ui_popup)
+	rmt = window.ui_popup.R;
+    mode = rmt && rmt.be_mode;
+    var zconf = E.get_zon_config();
+    var info = {version: zconf.ZON_VERSION};
+    if (rmt)
+    {
+	info.server_version = rmt.get('ver')+
+	    (!rmt.get('inited') ? ' Not initialized' : '');
+    }
+    if (mode && mode.get('svc.version'))
+        info.svc_version = mode.get('svc.version');
+    if (mode && mode.get('plugin.enabled'))
+        info.plugin_enabled = true;
+    info.makeflags = zconf.CONFIG_MAKEFLAGS;
+    if (chrome)
+	info.product_type = E.get_conf().type;
+    info.id = chrome ? chrome.runtime&&chrome.runtime.id :
+        'jid1-4P0kohSJxU1qGg@jetpack';
+    info.browser = E.browser();
+    info.browser_build = window.conf && window.conf.browser.name;
+    info.platform = navigator.platform;
+    info.user_agent = navigator.userAgent;
+    if (window.is_tpopup)
+	info.is_tpopup = window.is_tpopup;
+    return info;
+};
+
+/* XXX arik: sync be_base.js <-> be_util.js (need to rm code duplication) */
+E.build = function(){
+    var info = E.build_info(), s = '';
+    for (var f in info)
+	s += (s ? '\n' : '')+f+': '+info[f];
+    return s;
+};
+
+// XXX romank: merge with be_config.js:require_on_error somehow
+E.require_on_error = function(err){
+    var mods = err.requireModules||[], _mods = mods.join(' ');
+    var id = (E.is_mp() ? 'mp' : E.is_be() ? 'be_int' : 'www')+'_require_err';
+    // errors with old require is final too
+    if (!err.fallback)
+        id += '_fin';
+    _zerr('require fatal error, modules: '+_mods+'\n'+err.stack);
+    err.require_handled = true;
+    var perr_sent = require.perr_sent||(require.perr_sent = []);
+    // sent perr only once for each error
+    if (perr_sent.indexOf(id)<0)
+    {
+        var fh = mods.map(function(m){ return require.toUrl(m); }).join('\n');
+        E.perr({id: id, info: _mods||(''+err), bt: err.stack, filehead: fh});
+        perr_sent.push(id);
+    }
+    if (!err.fallback)
+        throw err;
+};
+
+var prev_error_handler = window.onerror;
+window.onerror = E.onerror = function(message, file, line, col, err){
+    var error_location = file+':'+line+':'+col;
+    if (typeof message=='object')
+        message = message.toString();
+    _zerr('js error: '+error_location+'\n'+message);
+    // don't send already handled requirejs errors
+    if (err && err.require_handled)
+        return;
+    E.perr_once({
+        id: (E.is_mp() ? 'mp' : E.is_be() ? 'be' : 'www')+'_js_err',
+        info: JSON.stringify({file: error_location, msg: message,
+	    href: location.href}),
+        bt: (err&&err.stack)||'',
+        filehead: 'userAgent: '+navigator.userAgent
+    });
+    if (prev_error_handler)
+        prev_error_handler.apply(window, arguments);
+};
+
+})();
+
+            // LICENSE_CODE ZON
+'use strict'; /*jshint node:true, browser:true*/
+(function(){
+var define;
+var is_node = typeof module=='object' && module.exports;
+if (!is_node)
+    define = self.define;
+else
+    define = function(setup){ module.exports = setup(); };
+define(function(){
+var E = {};
+
+// XXX arik: sync: util/user_agent.js <-> svc/cdn/pub/play_loader.js
+/* XXX mikhail: unify with OS version parsing from hola_service */
+var win_versions = {
+    '10.0': '10.0',
+    '6.3': '8.1',
+    '6.2': '8',
+    '6.1': '7',
+    '6.0': 'vista',
+    '5.2': '2003',
+    '5.1': 'xp',
+    '5.0': '2000'
+};
+
+var arch_mapping = {
+    'x86_64': '64',
+    'i686': '32',
+    'arm': 'arm'
+};
+
+var check_hola = /\bhola_android\b/i;
+var check_opera = /\bOPR\b\/(\d+)/i;
+var check_edge = /\bEdge\b\/(\d+)/i;
+var check_xbox = /\bxbox\b/i;
+
+E.guess_browser = function(ua){
+    var res;
+    ua = ua || (!is_node ? self.navigator.userAgent : '');
+    if ((res = /[( ]MSIE ([6789]|10).\d[);]/.exec(ua)))
+	return {browser: 'ie', version: res[1], xbox: check_xbox.test(ua)};
+    if ((res = /[( ]Trident\/\d+(\.\d)+.*rv:(\d\d)(\.\d)+[);]/.exec(ua)))
+	return {browser: 'ie', version: res[2], xbox: check_xbox.test(ua)};
+    if ((res = / Chrome\/(\d+)(\.\d+)+.* Safari\/\d+(\.\d+)+/.exec(ua)))
+    {
+        var opera = check_opera.exec(ua);
+        var edge;
+        if ((edge = check_edge.exec(ua)))
+            return {browser: 'ie', version: edge[1]};
+	return {browser: 'chrome', version: res[1],
+	    android: ua.match(/Android/),
+	    webview: ua.match(/ Version\/(\d+)(\.\d)/),
+	    hola_android: check_hola.test(ua),
+	    opera: opera && !!opera[1],
+	    opera_version: opera ? opera[1] : undefined};
+    }
+    if ((res = / QupZilla\/(\d+\.\d+\.\d+).* Safari\/\d+.\d+/.exec(ua)))
+	return {browser: 'qupzilla', version: res[1]};
+    if ((res = /\(PlayStation (\d+) (\d+\.\d+)\).* AppleWebKit\/\d+.\d+/
+        .exec(ua)))
+    {
+	return {browser: 'playstation'+res[1], version: res[2]};
+    }
+    if ((res = / Version\/(\d+)(\.\d)+.* Safari\/\d+.\d+/.exec(ua)))
+    {
+	if (!ua.match(/Android/))
+            return {browser: 'safari', version: res[1]};
+        return {browser: 'chrome', version: res[1], android: true,
+            webview: true, hola_android: check_hola.test(ua)};
+    }
+    if ((res = / (Firefox|PaleMoon)\/(\d+).\d/.exec(ua)))
+    {
+	return {browser: 'firefox', version: res[2],
+            palemoon: res[1]=='PaleMoon'};
+    }
+    if ((res = /\(iPad; CPU OS ([\d_]+) like Mac OS X\) AppleWebKit\/\d+\.\d+\.\d+.* Safari\/\d+\.\d+\.\d+/.exec(ua)))
+    {
+        return {browser: 'safari', version: res[1], ios: true};
+    }
+    if (/Hola\/\d+\.\d+./.exec(ua))
+        return {browser: 'safari', version: 'Hola'};
+    return {};
+};
+
+E.force_hola_ff = undefined; // detected and set from outside
+E.guess_browser_hola = function(){
+    var b = E.guess_browser(), t;
+    if (((b.browser=='chrome' && !b.opera) ||
+        (b.browser=='firefox' && E.force_hola_ff))
+        && (t = self.navigator.mimeTypes) &&
+        (t = t['application/x-hola-vlc-plugin']) && t.enabledPlugin)
+    {
+        b.hola_br = true;
+    }
+    return b;
+};
+
+E.browser_to_string = function(browser){
+    if (typeof browser!='object' || !browser.browser)
+        return 'unknown';
+    var s = browser.browser;
+    if (browser.version)
+        s += ' '+browser.version;
+    if (browser.xbox)
+        s += ' xbox';
+    if (browser.android)
+        s += ' android';
+    if (browser.webview)
+        s += ' webview';
+    if (browser.opera)
+    {
+        s += ' opera';
+        if (browser.opera_version)
+            s += '-'+browser.opera_version;
+    }
+    if (browser.hola_android)
+        s += ' hola_android';
+    if (browser.palemoon)
+        s += ' palemoon';
+    if (browser.ios)
+        s += ' ios';
+    return s ? s : 'unknown';
+};
+
+E.guess = function(ua){
+    var res;
+    ua = ua || (!is_node ? self.navigator.userAgent : '');
+    if ((res = /Windows(?: NT(?: (.*?))?)?[);]/.exec(ua)))
+    {
+        return {
+            os: 'windows',
+            version: win_versions[res[1]],
+            release_version: res[1],
+            arch: ua.match(/WOW64|Win64|x64/) ? '64' : '32'
+        };
+    }
+    if ((res = /Macintosh.*; (?:Intel|PPC) Mac OS X (\d+[._]\d+)/.exec(ua)))
+        return {os: 'macos', version: res[1].replace('_', '.')};
+    if (/Macintosh/.exec(ua))
+        return {os: 'macos'};
+    if ((res = /Android(?: (\d+\.\d+))?/.exec(ua)))
+        return {os: 'android', version: res[1]};
+    if ((res = /(Linux|CrOS|OpenBSD|FreeBSD)(?: (x86_64|i686|arm))?/.exec(ua)))
+    {
+        // XXX alexey: this code may run server-side, do not access navigator
+        // without a check
+        if (check_opera.test(ua) && res[1]=='Linux' && res[2]=='x86_64' &&
+            /^Linux arm/.test(navigator.platform))
+        {
+            // Opera Mobile bug
+            return {os: 'android'};
+        }
+        return {
+            os: res[1].toLowerCase(),
+            arch: arch_mapping[res[2]],
+            nix: true
+        };
+    }
+    if ((res = /(?:iPhone|iPad|iPod|iPod touch);.*?OS (\d+[._]\d+)/.exec(ua)))
+        return {os: 'ios', version: res[1].replace('_', '.')};
+    if (/iPhone|iPad|iPod/.exec(ua))
+        return {os: 'ios'};
+    if (/PLAYSTATION/.exec(ua))
+        return {os: 'ps'};
+    if (/Windows Phone/.exec(ua))
+        return {os: 'winphone'};
+    // HitLeap Viewer (whatever it is) is Windows-only
+    if (/HitLeap Viewer/.exec(ua))
+        return {os: 'windows'};
+    return {};
+};
+
+E.guess_device = function(ua){
+    var res;
+    ua = ua || (!is_node ? self.navigator.userAgent : '');
+    if ((res = /(iPhone|iPad|iPod)/.exec(ua)))
+        return {device: res[1].toLowerCase()};
+    return {};
+};
+
+// Guesses platform based on navigator.platform
+E.guess_platform = function(platform){
+    platform = platform || (!is_node ? self.navigator.platform : '');
+    // XXX mikhail: many Android browsers report 'Linux xyz' as platform
+    if (/^(Linux|Android|null)/.exec(platform))
+        return 'android';
+    if (/^Mac/.exec(platform))
+        return 'macos';
+    // XXX mikhail: detect Windows Phone
+    if (/^Win/.exec(platform))
+        return 'windows';
+    if (/^(iPhone|iPod|iPad|Pike v)/.exec(platform))
+        return 'ios';
+    if (/playstation/i.exec(platform))
+        return 'playstation';
+};
+
+if (!is_node){
+E.support_fullscreen = function(){
+    return !!(document.fullscreenEnabled||document.mozFullScreenEnabled||
+        document.webkitFullscreenEnabled||document.msFullscreenEnabled);
+};
+}
+return E; }); }());
+
+        }());
+        window.hola_min_require.uninstall();
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  function hola_get_cookie(name){
+      var match = document.cookie.match(new RegExp('hola_'+name+'=([^;]*)'));
+      if (match && match[1])
+          return match[1];
+  }
+  window.ga('create', hola_get_cookie('ga_id')||'UA-36775596-1', 'hola.org');
+  window.ga('send', 'pageview');
+</script>
+
+    <script src="https://hola.org/require.js?md5=87196-3d508f85"></script>
+    <script>
+      require(['https://hola.org/util/user_agent.js', 'https://hola.org/util/es6_shim.js',
+          'https://hola.org/util/typedarray_shim.js'], function(zua, es6_shim, typedarray_shim)
+      {
+          if (zua.guess().os == 'android')
+          {
+              var pre = document.getElementById('android_pre_loading');
+              pre.style.display = 'block';
+              var footer = document.getElementsByTagName('footer');
+              footer[0].parentNode.removeChild(footer[0]);
+              var aperture_anim = {
+                  spinners: document.querySelectorAll('.spinner-android'),
+                  aperture: document.getElementById('aperture_android'), s_angle: 0,
+                  a_angle: -20, terminate: false, prev_time: 0, s_speed: 0.25,
+                  a_speed: 0.02};
+              var anim_aperture = animate_aperture.bind(aperture_anim);
+              aperture_anim.animate = anim_aperture;
+              window.requestAnimationFrame(anim_aperture);
+              function animate_aperture(time){
+                  if (this.terminate)
+                      return;
+                  var dt = time-this.prev_time;
+                  this.prev_time = time;
+                  var spin_angle = this.s_angle = (this.s_angle+dt*this.s_speed)%360;
+                  this.a_angle = (this.a_angle+dt*this.a_speed)%360;
+                  // dom methods here for speed considerations
+                  Array.prototype.forEach.call(this.spinners,function(spn){
+                      spn.setAttribute('transform', 'rotate('+spin_angle+')');
+                  });
+                  this.aperture.setAttribute('transform', 'rotate('+this.a_angle+')');
+                  window.requestAnimationFrame(this.animate);
+              }
+          }
+      });
+      window.hola_min_require.give_modules();
+      require.config({"baseUrl":"https://","urlArgs":"ver=1.10.181"});
+      require(['https://hola.org/www/util/pub/config.js'], function(config){
+          config.init({"ver":"1.10.181","cdn_path":"https://cdnjs.cloudflare.com/ajax/libs"}, ['https://hola.org/www/hola/pub/mplay.js'],
+              function(mplay){ mplay.init({play_page: true}); });
+      });
+    </script>
+  </body>
 </html>
