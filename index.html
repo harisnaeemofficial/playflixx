@@ -910,9 +910,9 @@ return E; }); }());
           }
       });
       window.hola_min_require.give_modules();
-      require.config({"baseUrl":"https://hola.org","urlArgs":"ver=1.10.181"});
+      require.config({"baseUrl":"//hola.org","urlArgs":"ver=1.10.181"});
       require(['/www/util/pub/config.js'], function(config){
-          config.init({"ver":"1.10.181","cdn_path":"https://cdnjs.cloudflare.com/ajax/libs"}, ['/www/hola/pub/mplay.js'],
+          config.init({"ver":"1.10.181","cdn_path":"//cdnjs.cloudflare.com/ajax/libs"}, ['/www/hola/pub/mplay.js'],
               function(mplay){ mplay.init({play_page: true}); });
       });
     </script>
