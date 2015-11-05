@@ -1,9 +1,42 @@
-<DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<script src="webtorrent.min.js"></script>
+<script type="text/javascript">
+var client = new WebTorrent();
+var magnetUri = 'magnet:?xt=urn:btih:90442afc7da0a51ae8999d4fe4c646fbe3b398c9&dn=Mr.Robot.S01E10.HDTV.x264-KILLERS%5Bettv%5D&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969&tr=wss%3A%2F%2Ftracker.webtorrent.io';
+
+
+
+client.add(magnetUri, function (torrent) {
+  // Got torrent metadata!
+  console.log('Torrent info hash:', torrent.infoHash);
+
+  // Let's say the first file is a webm (vp8) or mp4 (h264) video...
+  var file = torrent.files[0];
+
+  var video = document.createElement('video');
+  video.controls = true;
+  document.body.appendChild(video);
+  // Create a video element
+
+  // Stream the video into the video tag
+  file.createReadStream().pipe(video);
+  console.log('LOADED');
+})
+/*<DOCTYPE html>
 <html>
 <head>
 <title>DHT demo</title>
 </head>
 <body>
 <script src="bundle.js"></script>
+</body>
+</html>
+*/
+</script>
 </body>
 </html>
