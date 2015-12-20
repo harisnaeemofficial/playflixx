@@ -26,7 +26,7 @@ $(function () {
 						hash = item.items[0].id;
 						furk_hash = item.items[0].id;
 						furk_imdb = item.imdb;
-						furk_magnet = item.items[0]torrent_magnet;
+						furk_magnet = item.items[0].torrent_magnet;
 						console.log("IMDB A VER QUE ONDA: "+furk_imdb);
 						html+='<div id="movie-box-'+'" class="movie-box movie-box-'+item.genres[0]+' col-lg-2 col-md-3 col-sm-6 col-xs-12" style="position:relative;float:left;">';
 						html+='<div style="width: 100%; height: 330px; position: absolute;left: 0px; top: 0px; -webkit-filter: blur(3px); -moz-filter: blur(3px); -o-filter: blur(3px); -ms-filter: blur(3px); filter: blur(3px); background-image:url(http://crossorigin.me/'+item.poster_big+'); background-position: center; background-size: cover;  background-repeat: no-repeat; -webkit-box-shadow: inset 0px 0px 30px 30px rgba(0, 0, 0, 1); -moz-box-shadow: inset 0px 0px 30px 30px rgba(0, 0, 0, 1); box-shadow: inset 0px 0px 30px 30px rgba(0, 0, 0, 1);"></div>';
