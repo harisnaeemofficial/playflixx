@@ -459,3 +459,23 @@ body::-webkit-scrollbar-thumb:horizontal {display: none!important;}
 		#dl_status_active-error:hover {
 			background: #BF0043;
 		}
+
+/*PRELOADER*/
+#preloader {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: rgba(0, 0, 0, 0.75);
+	z-index: 10;
+}
+.cssload-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.cssload-whirlpool,.cssload-whirlpool::after,.cssload-whirlpool::before{position:absolute;top:50%;left:50%;border:1px solid rgba(1,59,166,.2);border-left-color:#0c2aed;border-radius:774px;-o-border-radius:774px;-ms-border-radius:774px;-webkit-border-radius:774px;-moz-border-radius:774px}
+.cssload-whirlpool{margin:-19px 0 0 -19px;height:39px;width:39px;animation:cssload-rotate 1.15s linear infinite;-o-animation:cssload-rotate 1.15s linear infinite;-ms-animation:cssload-rotate 1.15s linear infinite;-webkit-animation:cssload-rotate 1.15s linear infinite;-moz-animation:cssload-rotate 1.15s linear infinite}
+.cssload-whirlpool::before{content:"";margin:-18px 0 0 -18px;height:34px;width:34px;animation:cssload-rotate 1.15s linear infinite;-o-animation:cssload-rotate 1.15s linear infinite;-ms-animation:cssload-rotate 1.15s linear infinite;-webkit-animation:cssload-rotate 1.15s linear infinite;-moz-animation:cssload-rotate 1.15s linear infinite}
+.cssload-whirlpool::after{content:"";margin:-22px 0 0 -22px;height:43px;width:43px;animation:cssload-rotate 2.3s linear infinite;-o-animation:cssload-rotate 2.3s linear infinite;-ms-animation:cssload-rotate 2.3s linear infinite;-webkit-animation:cssload-rotate 2.3s linear infinite;-moz-animation:cssload-rotate 2.3s linear infinite}@keyframes cssload-rotate{100%{transform:rotate(360deg)}}@-o-keyframes cssload-rotate{100%{-o-transform:rotate(360deg)}}@-ms-keyframes cssload-rotate{100%{-ms-transform:rotate(360deg)}}@-webkit-keyframes cssload-rotate{100%{-webkit-transform:rotate(360deg)}}@-moz-keyframes cssload-rotate{100%{-moz-transform:rotate(360deg)}}
