@@ -14,14 +14,14 @@ $(function () {
 
 	var protocol = "https://";
 
-	var endpoint = "ytsag";
-	switch (endpoint) {
+	var provider = "ytsag";
+
+	switch (provider) {
 		case "torrentsapi": endpoint = "api.torrentsapi.com/list?"; break;
 		case "ytsag": endpoint = "yts.ag/api/v2/list_movies.json?"; break;
 		case "ytsis": endpoint = "yify.is/index.php/api/v2/list_movies.json?"; break;
 		case "ytsli": endpoint = "yts.li/api/v2/list_movies.json?"; break;
-
-		// default: endpoint = "";
+		case "eztv_popcorntimews": endpoint = "popcorntime.ws/api/eztv/shows/"; break;
 	}
 
 	var sort_key = "&sort_by=";
@@ -35,7 +35,13 @@ $(function () {
 	var limit_items_value = 24;
 	var limit = limit_items_key+limit_items_value;
 
-	var page_key = "&page=";
+	switch (provider) {
+		case "torrentsapi": page_key = "&page="; break;
+		case "ytsag": page_key = "&page="; break;
+		case "ytsis": page_key = "&page="; break;
+		case "ytsli": page_key = "&page="; break;
+		case "eztv_popcorntimews": page_key = ""; break;
+	}	
 
 	var sort = sort_key+sort_value;
 	var quality = quality_key+quality_value;
@@ -55,7 +61,14 @@ $(function () {
 
 		var page = page_key+page_value;
 
-		var parameters = sort+quality+limit+page;
+		switch (provider) {
+			case "torrentsapi": parameters = page+sort+quality+limit; break;
+			case "ytsag": parameters = page+sort+quality+limit; break;
+			case "ytsis": parameters = page+sort+quality+limit; break;
+			case "ytsli": parameters = page+sort+quality+limit; break;
+			case "eztv_popcorntimews": parameters = page; break;
+			// default: ;
+		}		
 
 		var api_url = proxy+protocol+endpoint+parameters;	
 		
@@ -74,6 +87,7 @@ $(function () {
 
 		$.getJSON(api_url, function (data) {
 			console.log(api_url);
+			console.log(data);
 			// GET STATUS DATA
 			/*
 			#ToDo
@@ -87,30 +101,26 @@ $(function () {
 			i = 0;
 	
 			// JSON DATA
-	
-			var json_data_provider = "ytsag";
 			
-			switch (json_data_provider) {
+			switch (provider) {
 				case "torrentsapi": json_data=data.MovieList; break;
 				case "ytsag": json_data=data.data.movies; break;
 				case "ytsis": json_data=data.data.movies; break;
 				case "ytsli": json_data=data.data.movies; break;
-				// default: json_data = "";
+				case "eztv_popcorntimews": json_data=data; break;
 			}			
 	
 			// JSON DATA
 			$.each(json_data, function (i, item) {
-				//console.log(item.items[0]);
-				var provider_name = "ytsag";
-				switch (provider_name) {
+				switch (provider) {
 					case "torrentsapi": hash=item.items[0].id; imdb=item.imdb; magnet=item.items[0].torrent_magnet; title=item.title; rating=item.rating; poster=item.poster_med; genre=item.genres[0]; background=item.poster_big; break;
 					case "ytsag": hash=item.torrents[0].hash; imdb=item.imdb_code; magnet="magnet:?xt=urn:btih:"+hash+"&dn="+escape(item.title)+trackers; title=item.title; rating=item.rating; poster=item.medium_cover_image; genre=item.genres[0]; background=item.background_image; break;
 					case "ytsis": hash=item.torrents[0].hash; imdb=item.imdb_code; magnet="magnet:?xt=urn:btih:"+hash+"&dn="+escape(item.title)+trackers; title=item.title; rating=item.rating; poster=item.medium_cover_image; genre=item.genres[0]; background=item.medium_cover_image; break;
 					case "ytsli": hash=item.torrents[0].hash; imdb=item.imdb_code; magnet="magnet:?xt=urn:btih:"+hash+"&dn="+escape(item.title)+trackers; title=item.title; rating=item.rating; poster=item.medium_cover_image; genre=item.genres[0]; background=item.background_image; break;
-					// default: provider = "";
+					case "eztv_popcorntimews": hash=""; imdb=item.imdb_id; magnet=""; title=item.title; rating=""; poster=item.images.poster; genre=""; background=item.images.fanart; break;
 				}				
 
-				if (provider_name === "torrentsapi") {
+				if (provider === "torrentsapi") {
 					if (item.items[0] === undefined) {
 					}
 					else {
