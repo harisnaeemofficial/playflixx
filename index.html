@@ -19,6 +19,13 @@
 		<!--/JS-->
 	</head>
 	<body>
+		<!--PRELOADER-->
+		<div id="preloader">
+			<div class="cssload-container">
+				<div class="cssload-whirlpool"></div>
+			</div>			
+		</div>
+		<!--/PRELOADER-->
 		<!--CATALOGUE-->
 		<div class="bg-overlay"></div>
 		<div id="movies" class="contentContainer row"></div>
@@ -37,6 +44,12 @@
 		<script type="text/javascript" src="js/functions.js"></script>
 		<script type="text/javascript" src="js/instructions.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-		<!--/JS-->		
+		<!--/JS-->
+		<script type="text/javascript">
+		$(document).ready(function() {
+				$("#preloader").css("display","none");
+			}
+		);
+		</script>		
 	</body>
 </html>
