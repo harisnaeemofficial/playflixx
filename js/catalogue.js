@@ -15,7 +15,7 @@ $(function () {
 
 	var proxy = "http://crossorigin.me/";
 	var protocol = "https://";	
-	var provider = "eztv_popcorntimews";
+	var provider = "ytsag";
 
 	var page_key;
 
