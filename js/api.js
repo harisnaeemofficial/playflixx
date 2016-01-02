@@ -1,3 +1,7 @@
+// https://github.com/search?p=7&q=popcorntime+%22%2Fapi%22&ref=searchresults&type=Code&utf8=%E2%9C%93
+
+// https://www.tokyotosho.info/search.php?terms=wanna+be+the+strongest+in+the+world+horriblesub+720&type=0&size_min=&size_max=&username=hs
+
 // Endpoints
 
 // Haruhichan #ANIME
@@ -6,6 +10,7 @@ var haruhichan = "http://ptp.haruhichan.com/list.php";
 
 /*
 	#PARAMETERS
+	https://github.com/phantomware/naughtyPhancast/blob/9ffd6eb25bbcd3b55b21efcdcec0b26405039d60/src/app/lib/providers/haruhichan.js
 	page = 0 -
 	type = TV, Movie
 	sort = rank, popularity
@@ -13,6 +18,7 @@ var haruhichan = "http://ptp.haruhichan.com/list.php";
 	genre = Action, Adventure, Cars, Comedy, Dementia, Demons, Drama, Ecchi, Fantasy, Game, Harem, Historical, Horror, Josei, Kids, Magic, Martial Arts, Mecha, Military, Music, Mystery, Parody, Police, Psychological, Romance, Samurai, School, Sci-Fi, Seinen, Shoujo, Shoujo Ai, Shounen, Shounen Ai, Slice of Life, Space, Sports, Super Power, Supernatural, Thriller, Vampire
 	limit = 1 - 50
 	type = All
+	example: http://ptp.haruhichan.com/anime.php?id=912 // #DETAILS
 */
 
 // Trakt #DETAILS
@@ -23,10 +29,16 @@ var trakt = "https://api-v2launch.trakt.tv";
 	#PARAMETERS
 	CLIENT_ID = 'c7e20abc718e46fc75399dd6688afca9ac83cd4519c9cb1fba862b37b8640e89',
 	CLIENT_SECRET = '476cf15ed52542c2c8dc502821280aa5f61a012db57f1ed1f479aaf88ab385cb',
+	var API_ENDPOINT = URI('https://api.trakt.tv/'),
+		API_KEY = '515a27ba95fbd83f20690e5c22bceaff0dfbde7c',
+		API_PLUGIN_VERSION = AdvSettings.get('traktTvVersion'),
+		PT_VERSION = AdvSettings.get('version');
+
+			    	'trakt-api-key': '8e798f3c3ed286081991f459f3d8fcb4e40969a31ce29f1f08e0ac4dbaf49258'
 */
 
 
-// TVShowTime #TV
+// TVShowTime #DETAILS
 
 var tvshowtime = "https://api.tvshowtime.com/v1";
 
@@ -116,6 +128,9 @@ var torrentsapi = "http://api.torrentsapi.com";
 	quality = 720p
 	page = 1
 	http://api.torrentsapi.com/show?imdb=tt4422836
+	http://api.torrentsapi.com/list?
+	http://api.torrentsapi.com/list?';//sort=seeds&quality=720p&page=' + params.page + "&count=" + params.limit;
+	api.torrentsapi.com/api/v2/list_movies.json
 */
 
 // TorrentProject #MAGNETS
@@ -148,7 +163,51 @@ var kat = "https://kat.cr/api/";
 
 /*
 	#PARAMETERS
+	https://github.com/isdampe/kat-api/blob/master/kat-api.js
+	https://github.com/sharkone/scrapyard/blob/41f240d35cac2f2d2787008186825d2bc48510a5/scrapyard/kickass.py
 	https://kat.cr/api/
+	http://kickass.to/json.php?q=terminator&page=1
+	https://kat.cr/json.php?q=terminator&page=1 !!!!!!!
+
+
+
+    //fingerprint = 'ED:10:DE:CD:19:37:65:7B:FE:71:FC:CB:E3:68:5C:AB:EE:66:01:D0',
+    //mirror = 'http://kickass.to/dailydump.txt.gz';
+    //apiUrl = 'http://yts.wf/api/',
+    fingerprint = 'ED:10:DE:CD:19:37:65:7B:FE:71:FC:CB:E3:68:5C:AB:EE:66:01:D0',
+        var params = {};
+        params.sort = 'seeds';
+        params.limit = '50';
+
+        if (filters.keywords) {
+            params.keywords = filters.keywords.replace(/\s/g, '% ')+"+category:movies+lang_id:17";
+        }else {
+            params.keywords = "category:movies+lang_id:17";
+        }
+
+        if (filters.genre) {
+            params.genre = filters.genre;
+        }
+
+        if (filters.order) {
+            var order = 'desc';
+            if (filters.order === 1) {
+                order = 'asc';
+            }
+            params.order = order;
+        }
+
+        if (filters.sorter && filters.sorter !== 'popularity') {
+            params.sort = filters.sorter;
+        }
+
+        if (filters.page) {
+            params.set = filters.page;
+        } else {
+            params.set = 1;
+        }
+
+
 */
 
 // TorrentAPI #MAGNETS
@@ -227,6 +286,7 @@ var themoviedb = "https://www.themoviedb.org/";
 	https://www.themoviedb.org/documentation/api/wrappers-libraries
 	http://docs.themoviedb.apiary.io/#
 	http://tmdb.org
+	http://api.themoviedb.org/3/discover/
 */
 
 // OMDBAPI #DETAILS
@@ -277,11 +337,33 @@ var animetorrentsapi = "http://api.anime.torrentsapi.com";
 
 // Waifu #ANIME
 
-var waifu = "http://waifu.ca";
+var waifu = "http://anime.waifu.ca/tvshows/all";
 
 /*
 	#PARAMETERS
 	http://waifu.ca
+	http://anime.waifu.ca/
+
+	Using the URLconf defined in supranime.urls, Django tried these URL patterns, in this order:
+	^admin/
+	^update$ [name='update']
+	^s/all$ [name='showall']
+	^s/today$ [name='showtoday']
+	^featured$ [name='featured']
+	^search/suggest$ [name='search']
+	^tvshows/featured$ [name='tvshows_featured']
+	^tvshows/newepisodes$ [name='tvshows_newepisodes']
+	^tvshows/all$ [name='tvshows_all']
+	^tvshows/(?P<id>\d+)$ [name='detail_anime']
+	^episodes/(?P<id>\d+)$ [name='detail_title']
+	^media/(?P<path>.*)$
+	^static\/(?P<path>.*)$
+	The current URL, , didn't match any of these.	
+
+	&page=
+
+	example: http://anime.waifu.ca/tvshows/newepisodes
+	http://crossorigin.me/http://anime.waifu.ca/tvshows/165 #DETAILS
 */
 
 // Hummingbird #ANIME
@@ -291,15 +373,81 @@ var name = "https://hummingbird.me";
 /*
 	#PARAMETERS
 	https://hummingbird.me
+	https://github.com/hummingbird-me/hummingbird/wiki/API-v2-Methods
 */
 
-// Bakabt #ANIME
+// Apiprivatetorrents #PORN
 
-var name = "http://bakabt.me";
+var apiprivatetorrents = "http://api.apiprivatetorrents.com/movies";
 
 /*
 	#PARAMETERS
-	http://bakabt.me
+	http://api.apiprivatetorrents.com/movies?page=2
+		https://github.com/phantomware/naughtyPhancast/blob/9ffd6eb25bbcd3b55b21efcdcec0b26405039d60/src/app/lib/providers/tpbm.js
+        var params = {
+            sort: 'seeds',
+            count: 50,
+            with_rt_ratings: true
+        };
+
+        if (filters.page) {
+            params.page = filters.page;
+        }
+
+        if (filters.keywords) {
+            params.keywords = filters.keywords;
+        }
+
+        if (filters.genre) {
+            params.genre = TPBMDict[filters.genre];
+        }
+
+        if (filters.order === 1) {
+            params.order_by = 'asc';
+        }
+
+        if (filters.sorter && filters.sorter !== 'popularity') {
+            params.sort = filters.sorter.replace(" ","");
+        }
+
+        //if (Settings.movies_quality !== 'all') {
+        //    params.quality = Settings.movies_quality;
+        //}
+*/
+
+// Ptapitsxaabevfvk #TV
+
+var name = "https://ptapitsxaabevfvk.onion.to/shows/1";
+
+/*
+	#PARAMETERS
+	?nocache
+	http:// + .link .city
+	shows/1 = list
+	show/{IMDB} = details
+
+	sort = 'seeds';
+    limit = '50';
+*/
+
+// Butter #MOVIES
+
+var name = "http://butter.vodo.net/popcorn";
+
+/*
+	#PARAMETERS
+	https://github.com/butterproject/butter-desktop/blob/master/src/app/lib/providers/vodo.js
+	http://butter.vodo.net/popcorn
+*/
+
+// Archive.org #MOVIES
+
+var name = "https://archive.org/advancedsearch.php";
+
+/*
+	#PARAMETERS
+	https://archive.org/advancedsearch.php
+
 */
 
 // Name #FUNCTION
@@ -313,12 +461,67 @@ var name = "http://bakabt.me";
 
 /*
 	OUT OF SERVICE (?)
-
 	http://yify-torrents.com/api/
+	https://eztvapi.re/
+	https://popcorni33hocj37.onion.to/
+	https://odgoglfi7uddahby.onion.to/
+	https://mi2i2dospijuauxa.onion.to/
+	https://ptapinjktqtsweq7.onion.to/
+	https://yts.im/api/
+	http://yify-torrents.com/api/
+	http://popporn-time.com/api
+	http://popcornbxexxf3bu.onion.to/
+	http://popcorncouzx5cjn.onion.to/
+	http://popcornd6v5duho3.onion.to/
+	http://popcorni33hocj37.onion.to/
+	http://popcornisgjxlf6f.onion.to/
+	http://popcornqbt6ktnfs.onion.to/
+	http://popcornwvnbg7jev.onion.to/	
 	https://popcorni33hocj37.onion.to/
 	https://odgoglfi7uddahby.onion.to/
 	https://mi2i2dospijuauxa.onion.to/
 	https://ptapinjktqtsweq7.onion.to/
 	https://eztvapi.re/
-	http://eztvapi.co.za/	
+	http://eztvapi.co.za/
+	http://tv.ytspt.re/	
+	http://api.t4pp.com
+	http://ptp.pollee.com/
+	https://yts.to/
+	https://7aa7xwqtxoft27r2.onion.to/
+	        var eztvEndpoints = ['eztvapi.re', 'tv.ytspt.re', 'api.popcorntime.io', 'api.popcorntime.cc', 'http://7aa7xwqtxoft27r2.onion'];
+        var ytsEndpoints = ['yts.to', 'yts.io', 'yts.sh', 'http://gm6gttbnl3bjulil.onion'];
+
+    uri: 'https://cloudflare.com/',
+    headers: {
+        'Host': 'xor.image.yt',
+        'User-Agent': 'Mozilla/5.0 (Linux) AppleWebkit/534.30 (KHTML, like Gecko) PT/3.8.0'
+    },
+
+	Settings.updateEndpoint = {
+	    url: 'https://popcorntime.re/',
+	    index: 0,
+	    proxies: [{
+	        url: 'https://popcorntime.re/',
+	        fingerprint: '30:A6:BA:6C:19:A4:D5:C3:5A:E8:F1:56:C6:B4:E1:DC:EF:DD:EC:8C',
+	    }, {
+	        url: 'https://popcorntime.io/',
+	        fingerprint: '30:A6:BA:6C:19:A4:D5:C3:5A:E8:F1:56:C6:B4:E1:DC:EF:DD:EC:8C'
+	    }, {
+	        url: 'https://popcorntime.cc/',
+	        fingerprint: '30:A6:BA:6C:19:A4:D5:C3:5A:E8:F1:56:C6:B4:E1:DC:EF:DD:EC:8C'
+	    }, {
+	        url: 'https://its.pt/',
+	        ssl: false,
+	        fingerprint: /301/
+	    }]
+	};
+	// Bakabt #ANIME
+
+	var name = "http://bakabt.me";
+
+	
+	//	#PARAMETERS
+	//	http://bakabt.me
+	
+
 */
