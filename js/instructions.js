@@ -34,13 +34,8 @@
 	http://popcorn-time.ru
 	http://popcorn-time.se
 	https://www.popcorntime.ws
-
-	APIS:
-	OUT OF SERVICE (?)
-	http://yify-torrents.com/api/
-	https://eztvapi.re/
-	https://popcorni33hocj37.onion.to/
-	https://odgoglfi7uddahby.onion.to/
-	https://mi2i2dospijuauxa.onion.to/
-	https://ptapinjktqtsweq7.onion.to/
+	http://popcorn-time.is/
+	http://popcorntime.ag/
+	popcorntime.ml
+	https://4gkocgx6e7dxme6j.onion.to/
 */
