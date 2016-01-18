@@ -33,7 +33,7 @@ function f_play_detalle(hash, imdb, magnet, title, rating, poster, genre, backgr
         movie_rating = Math.round(rating);
         var html = "";
         
-        html += '<img id="close" src="http://i.imgur.com/P7Svq.png" style="position: fixed; z-index: 100000; top: 0%; right: 0%;" onclick="closeThis_detalle(); unscrollDetails();" />';
+        // html += '<img id="close" src="http://i.imgur.com/P7Svq.png" style="position: fixed; z-index: 100000; top: 0%; right: 0%;" onclick="closeThis_detalle(); unscrollDetails();" />';
 
         // #ToDo: use the screenshots id4.replace("background.jpg", "large-screenshot1.jpg")
         html += '<div id="bg-yts" class="container-fluid" style="background-image: url('+background+');">';
