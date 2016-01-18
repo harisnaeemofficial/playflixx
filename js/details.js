@@ -34,8 +34,8 @@ function f_play_detalle(hash, imdb, magnet, title, rating, poster, genre, backgr
         var html = "";
         
 
-        html += '<i class="fa fa-angle-left fa-2x" style="font-size: 1.5em;"></i>';
-        
+        html += '<i id="close" class="fa fa-angle-left fa-2x" style="font-size: 1.5em;position: fixed; z-index: 100000; top: 0%; right: 0%;" onclick="closeThis_detalle(); unscrollDetails();"></i>';
+
         // html += '<img id="close" src="http://i.imgur.com/P7Svq.png" style="position: fixed; z-index: 100000; top: 0%; right: 0%;" onclick="closeThis_detalle(); unscrollDetails();" />';
 
         // #ToDo: use the screenshots id4.replace("background.jpg", "large-screenshot1.jpg")
