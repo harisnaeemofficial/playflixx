@@ -34,7 +34,7 @@ function f_play_detalle(hash, imdb, magnet, title, rating, poster, genre, backgr
         var html = "";
         
 
-        html += '<i id="close" class="fa fa-angle-left fa-2x" style="font-size: 5.0em;position: fixed; z-index: 100000; top: 10%; left: 2%;color:#013BA6;" onclick="closeThis_detalle(); unscrollDetails();"></i>';
+        html += '<i id="close" class="fa fa-angle-left fa-2x" style="font-size: 5.0em;position: fixed; z-index: 100000; top:96px; left: 30px;color:#013BA6;" onclick="closeThis_detalle(); unscrollDetails();"></i>';
 
         // html += '<img id="close" src="http://i.imgur.com/P7Svq.png" style="position: fixed; z-index: 100000; top: 0%; right: 0%;" onclick="closeThis_detalle(); unscrollDetails();" />';
 
