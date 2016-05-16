@@ -1,6 +1,6 @@
 # playflix.github.io
 
-Watch movies instantly powered by Hydraflix
+Watch movies instantly
 
 It works in 4 simple steps:
 
