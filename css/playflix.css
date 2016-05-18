@@ -536,12 +536,15 @@ img.chrome {
 	border-right: 1px #fff solid;
 }
 #playflix_slogan_steps {
+	position: relative;
+	top: -60px;
+}
+#playflix_slogan_steps > span {
     color: #ffffff;
     font-family: avalon;
     font-size: 20px;
     line-height: 20px;
     text-transform: uppercase;
-    margin-bottom: 20px;
 }
 .fa-refresh, .fa-smile-o {
 	font-size: 62px!important;
