@@ -545,6 +545,8 @@ img.chrome {
     font-size: 20px;
     line-height: 20px;
     text-transform: uppercase;
+    border: 2px #013BA6 solid;
+    padding: 10px;
 }
 .fa-refresh, .fa-smile-o {
 	font-size: 62px!important;
