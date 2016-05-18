@@ -548,6 +548,12 @@ img.chrome {
     border: 2px #013BA6 solid;
     padding: 15px;
 }
+#steps_reload-img {
+	margin-top: 15px;
+}
+#steps_enjoy-img {
+	margin-top: 10px;	
+}
 .fa-refresh, .fa-smile-o {
 	font-size: 62px!important;
 	margin-top: 14px;
