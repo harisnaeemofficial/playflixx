@@ -1,3 +1,4 @@
+/*
 function f_play_detalle(hash, imdb, magnet, title, rating, poster, genre, background, api_url, provider, proxy, content_value) {
 
     var content_key;
@@ -142,3 +143,4 @@ function f_play_detalle(hash, imdb, magnet, title, rating, poster, genre, backgr
         $("#fullscreen_detail").attr('class','fullscreen_detail_in');       
     });
 };
+*/
