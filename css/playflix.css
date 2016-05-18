@@ -503,6 +503,55 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 
 }
 
+.steps {
+	font-size: 14px;
+}
+.steps > a { 
+	color: #ffffff!important;
+	text-decoration: none;
+}
+.steps > a:hover {
+	color: #ffffff!important;
+	text-decoration: none;
+}
+.steps > a:visited {
+	color: #ffffff!important;
+	text-decoration: none;	
+}
+img.chrome {
+	width: 206px;
+    margin: 0 auto;
+    margin-top: 14px;
+}
+#steps {
+	top: 80%;
+    position: relative;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 14px;    
+    text-align: center;
+    padding: 0px 150px;    
+}
+.steps-b-r {
+	border-right: 1px #fff solid;
+}
+#playflix_slogan_steps {
+    color: #ffffff;
+    font-family: avalon;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.fa-refresh, .fa-smile-o {
+	font-size: 62px!important;
+	margin-top: 14px;
+}
+.fa-smile-o {
+	font-size: 62px!important;
+	margin-top: 3px;
+}
+
 @media (max-width: 768px) {
 	#playflix-isologotipo {
 		display: none;

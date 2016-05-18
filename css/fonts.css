@@ -1,0 +1,9 @@
+@font-face{
+	font-family: Avalon;
+	font-style: normal;
+	font-weight: 700;
+	src:url(fonts/avalon-bold.eot);
+	src:url(fonts/avalon-bold.eot?#iefix) format("embedded-opentype"),
+	url(fonts/avalon-bold.woff) format("woff"),
+	url(fonts/avalon-bold.ttf) format("truetype")
+}
