@@ -164,11 +164,14 @@ $(function () {
 					case "torrentsapishows": 	hash = ""; 						imdb = item.imdb; 		magnet = ""; 																title = item.title; 		  	rating = item.rating; 		poster = item.poster_med; 			genre = item.genres[0]; background = item.poster_big; 			content_value = ""; break;
 				}
 				catalogue (hash, imdb, magnet, title, rating, poster, genre, background, api_url, provider, proxy, content_value);												
-				if (i % 3 == 0 )  {
-					console.log("SI es multiplo de 3");
+				// #ToDo make the numbers by bootstrap columns and document witdh!
+				var moviesXrow = 5;
+				if (i % moviesXrow == 0 )  {
+					console.log("SI es multiplo de 5");
+					$('#movies').append("<div></div>");
 				}
 				else {
-					console.log("NO es multiplo de 3");
+					console.log("NO es multiplo de 5");
 				}
 				i++;				
 			});	
