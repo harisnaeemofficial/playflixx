@@ -100,6 +100,7 @@ $(function () {
 			case "ytsli": 				protocol = "https://"; endpoint = "yts.li/api/v2/list_movies.json?";			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break; // NO CORS LOCAL!
 			case "eztv_popcorntimews": 	protocol = "https://"; endpoint = "popcorntime.ws/api/eztv/shows/";				type_value = "";	page_key = "";			parameters = ""; 				 break;
 			// #ToDo case "eztvapi_ml": protocol = "https://"; endpoint = "eztvapi.ml/shows/";
+			// #ToDo case "http://api.ysubs.com/"
 			case "haruhichan": 			protocol = "http://";  endpoint = "ptp.haruhichan.com/list.php?";				type_value = "all";	page_key = "page=";		parameters = type; 			  	 break;
 			case "popcornwvnbg7jev": 	protocol = "https://"; endpoint = "popcornwvnbg7jev.onion.to/shows/";			type_value = "";	page_key = "";			parameters = ""; 				 break;
 			case "animetorrentsapi": 	protocol = "http://";  endpoint = "api.anime.torrentsapi.com/list?";			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
