@@ -164,6 +164,12 @@ $(function () {
 					case "torrentsapishows": 	hash = ""; 						imdb = item.imdb; 		magnet = ""; 																title = item.title; 		  	rating = item.rating; 		poster = item.poster_med; 			genre = item.genres[0]; background = item.poster_big; 			content_value = ""; break;
 				}
 				catalogue (hash, imdb, magnet, title, rating, poster, genre, background, api_url, provider, proxy, content_value);												
+				if (i % 3 == 0 )  {
+					console.log("es multiplo de 3");
+				}
+				else {
+					console.log("es multiplo de 3");
+				}
 				i++;				
 			});	
 			// Pagination | Infinite Scrolling
