@@ -165,10 +165,10 @@ $(function () {
 				}
 				catalogue (hash, imdb, magnet, title, rating, poster, genre, background, api_url, provider, proxy, content_value);												
 				if (i % 3 == 0 )  {
-					console.log("es multiplo de 3");
+					console.log("SI es multiplo de 3");
 				}
 				else {
-					console.log("es multiplo de 3");
+					console.log("NO es multiplo de 3");
 				}
 				i++;				
 			});	
