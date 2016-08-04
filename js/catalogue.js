@@ -17,10 +17,10 @@ $(function () {
 
 	var proxy = "http://crossorigin.me/";
 	var protocol = "https://";	
-	var provider = "ytsag";
+	var provider = "ytsis";
 
 	$("#movies_navbar").click(function() {
-  		provider = "ytsag";
+  		provider = "ytsis";
   		$("#movies").html("");
 	var page_value = 0;
 	var pageToSave = JSON.stringify(page_value);
