@@ -26,7 +26,7 @@ $('#submit').pressEnter(function(){
 	return false;
 });
 var search_parameter = getUrlParameter('q');
-$.getJSON("https://yts.ag/api/v2/list_movies.json?query_term="+search_parameter, function (data) {
+$.getJSON("http://yify.is/index.php/api/v2/list_movies.json?query_term="+search_parameter, function (data) {
 	$('#movies').html("");
 
 	i = 0;
