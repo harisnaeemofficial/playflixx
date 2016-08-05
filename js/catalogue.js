@@ -17,7 +17,7 @@ $(function () {
 
 	var proxy = "http://crossorigin.me/";
 	var protocol = "http://";	
-	var provider = "ytsis";
+	var provider = "ytsag";
 
 	$("#movies_navbar").click(function() {
   		provider = "ytsis";
@@ -113,7 +113,7 @@ $(function () {
 
 		var page = page_key+page_value;
 
-		var api_url = proxy+protocol+endpoint+page+parameters; // proxy+protocol+endpoint+page+parameters;
+		var api_url = protocol+endpoint+page+parameters; // proxy+protocol+endpoint+page+parameters;
 
 		$.getJSON(api_url, function (data) {
 			// GET STATUS DATA
