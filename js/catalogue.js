@@ -66,7 +66,7 @@ $(function () {
 	var page_key;
 
 	var sort_key = "&sort_by=";
-	var sort_value = "year";
+	var sort_value = "seeds";
 	var sort = sort_key+sort_value;
 	
 	var quality_key ="&quality=";
