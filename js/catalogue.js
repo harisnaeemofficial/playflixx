@@ -15,7 +15,15 @@ $(function () {
 	var hash, imdb, magnet, title, rating, poster, genre, background;	
 	// DATASET
 
-	var proxy = "http://crossorigin.me/";
+	var proxy = "cors-proxy";
+
+	switch (provider) {
+		case "crossorigin":			proxy = "http://crossorigin.me/";
+		case "cors-proxy": 			proxy = "http://cors-proxy.htmldriven.com/?url=";
+	}
+
+	console.log("proxy: " + proxy);
+	
 	var protocol = "http://";	
 	var provider = "ytsag";
 
@@ -113,7 +121,7 @@ $(function () {
 
 		var page = page_key+page_value;
 
-		var api_url = protocol+endpoint+page+parameters; // proxy+protocol+endpoint+page+parameters;
+		var api_url = proxy+protocol+endpoint+page+parameters; // proxy+protocol+endpoint+page+parameters;
 
 		$.getJSON(api_url, function (data) {
 			// GET STATUS DATA
