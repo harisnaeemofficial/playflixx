@@ -17,7 +17,7 @@ $(function () {
 
 	var proxy = "cors-proxy";
 
-	switch (provider) {
+	switch (proxy) {
 		case "crossorigin":			proxy = "http://crossorigin.me/";
 		case "cors-proxy": 			proxy = "http://cors-proxy.htmldriven.com/?url=";
 	}
