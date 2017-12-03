@@ -15,17 +15,18 @@ $(function () {
 	var hash, imdb, magnet, title, rating, poster, genre, background;	
 	// DATASET
 
-	var proxy = "cors-proxy";
+	var proxy = "none";
 
 	switch (proxy) {
 		case "crossorigin":			proxy = "http://crossorigin.me/";
-		case "cors-proxy": 			proxy = "http://cors-proxy.htmldriven.com/?url=";
+		case "cors-proxy": 			proxy = "http://cors-proxy.htmldriven.com/?url="; // necesita parsearse
+		case "none": 				proxy = "";
 	}
 
 	console.log("proxy: " + proxy);
 	
 	var protocol = "http://";	
-	var provider = "ytsag";
+	var provider = "torrentsapi";
 
 	$("#movies_navbar").click(function() {
   		provider = "ytsis";
@@ -104,19 +105,20 @@ $(function () {
 		switch (provider) {
 			case "torrentsapi":			protocol = "https://"; endpoint = "api.torrentsapi.com/list?"; 					type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsag": 				protocol = "https://"; endpoint = "yts.ag/api/v2/list_movies.json?"; 			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
-			case "ytsis": 				protocol = "https://"; endpoint = "yify.is/index.php/api/v2/list_movies.json?";	type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break; // http://yify.is/api/v2/list_movies.json // http://yts.ph/api http://yts.ph/api/v2/list_movies.json !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			case "ytsli": 				protocol = "https://"; endpoint = "yts.li/api/v2/list_movies.json?";			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break; // NO CORS LOCAL!
-			case "eztv_popcorntimews": 	protocol = "https://"; endpoint = "popcorntime.ws/api/eztv/shows/";				type_value = "";	page_key = "";			parameters = ""; 				 break;
+			case "ytsis": 				protocol = "https://"; endpoint = "yify.is/index.php/api/v2/list_movies.json?";	type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
+			case "ytsph": 				protocol = "https://"; endpoint = "yts.ph/api/v2/list_movies.json?";	type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
+			case "ytsli": 				protocol = "https://"; endpoint = "yts.li/api/v2/list_movies.json?";			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break; // NO CORS LOCAL! // IS DEAD
+			case "eztv_popcorntimews":              protocol = "https://"; endpoint = "popcorntime.ws/api/eztv/shows/";				type_value = "";	page_key = "";			parameters = ""; 				 break;
 			// #ToDo case "eztvapi_ml": protocol = "https://"; endpoint = "eztvapi.ml/shows/";
 			// #ToDo case "http://api.ysubs.com/"
 			case "haruhichan": 			protocol = "http://";  endpoint = "ptp.haruhichan.com/list.php?";				type_value = "all";	page_key = "page=";		parameters = type; 			  	 break;
-			case "popcornwvnbg7jev": 	protocol = "https://"; endpoint = "popcornwvnbg7jev.onion.to/shows/";			type_value = "";	page_key = "";			parameters = ""; 				 break;
-			case "animetorrentsapi": 	protocol = "http://";  endpoint = "api.anime.torrentsapi.com/list?";			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
+			case "popcornwvnbg7jev": 	        protocol = "https://"; endpoint = "popcornwvnbg7jev.onion.to/shows/";			type_value = "";	page_key = "";			parameters = ""; 				 break;
+			case "animetorrentsapi": 	        protocol = "http://";  endpoint = "api.anime.torrentsapi.com/list?";			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "waifu": 				protocol = "http://";  endpoint = "anime.waifu.ca/tvshows/all?";				type_value = "";	page_key = "page=";		parameters = ""; 				 break;
-			case "apiprivatetorrents": 	protocol = "http://";  endpoint = "api.apiprivatetorrents.com/movies";			type_value = "";	page_key = "page=";		parameters = ""; 				 break;
-			case "ptapitsxaabevfvk": 	protocol = "https://"; endpoint = "ptapitsxaabevfvk.onion.to/shows/";			type_value = "";	page_key = "";			parameters = ""; 				 break;
+			case "apiprivatetorrents": 	        protocol = "http://";  endpoint = "api.apiprivatetorrents.com/movies";			type_value = "";	page_key = "page=";		parameters = ""; 				 break;
+			case "ptapitsxaabevfvk": 	        protocol = "https://"; endpoint = "ptapitsxaabevfvk.onion.to/shows/";			type_value = "";	page_key = "";			parameters = ""; 				 break;
 			case "butter": 				protocol = "http://";  endpoint = "butter.vodo.net/popcorn";					type_value = "";	page_key = "";			parameters = ""; 				 break;
-			case "torrentsapishows": 	protocol = "https://"; endpoint = "api.torrentsapi.com/shows?cb=";				type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
+			case "torrentsapishows": 	        protocol = "https://"; endpoint = "api.torrentsapi.com/shows?cb=";				type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 		}	
 
 		var page = page_key+page_value;
@@ -144,6 +146,7 @@ $(function () {
 				case "torrentsapi": 		json_data = data.MovieList; 	break;
 				case "ytsag": 				json_data = data.data.movies; 	break;
 				case "ytsis": 				json_data = data.data.movies; 	break;
+				case "ytsph": 				json_data = data.data.movies; 	break;					
 				case "ytsli": 				json_data = data.data.movies; 	break;
 				case "eztv_popcorntimews": 	json_data = data; 				break;
 				case "haruhichan": 			json_data = data; 				break;
