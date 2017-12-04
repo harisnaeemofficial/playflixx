@@ -135,8 +135,9 @@ $(function () {
 		
 		
 		
+		// #ToDo: Search functions
 		
-		
+		/*
 		$.fn.pressEnter = function(fn) {  
 
 		    return this.each(function() {  
@@ -159,9 +160,7 @@ $(function () {
 
 			location.href = "?q=" + search;
 
-				/*
 
-		*/
 			return false;
 		});
 		var search_parameter = getUrlParameter('q');
@@ -181,6 +180,7 @@ $(function () {
 			// Pagination | Infinite Scrolling
 			//$('#movies').append(html);
 		});	
+		*/
 		
 		$.getJSON(api_url, function (data) {
 			// GET STATUS DATA
