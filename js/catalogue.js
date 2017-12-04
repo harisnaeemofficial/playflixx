@@ -131,7 +131,57 @@ $(function () {
 		var api_url = proxy+protocol+endpoint+page+parameters; // proxy+protocol+endpoint+page+parameters;
 		
 		console.log("api_url: "+api_url);
+		
+		
+		
+		
+		
+		
+		$.fn.pressEnter = function(fn) {  
 
+		    return this.each(function() {  
+			$(this).bind('enterPress', fn);
+			$(this).keyup(function(e){
+			    if(e.keyCode == 13)
+			    {
+			      $(this).trigger("enterPress");
+			      console.log("algo");
+			    }
+			})
+		    });  
+		 }; 
+
+
+		$('#submit').pressEnter(function(){
+			$('#movies').html("");
+
+			var search = $("#submit").val();
+
+			location.href = "?q=" + search;
+
+				/*
+
+		*/
+			return false;
+		});
+		var search_parameter = getUrlParameter('q');
+		$.getJSON(api_url+search_parameter, function (data) {
+			$('#movies').html("");
+			i = 0;
+			// #ToDo: refactoring with switch cases			
+			json_data = data.data.movies;
+			// JSON DATA
+			$.each(json_data, function (i, item) {
+				hash = item.torrents[0].hash; 	imdb = item.imdb_code; 	magnet = "magnet:?xt=urn:btih:"+hash+"&dn="+escape(item.title)+trackers; 	title = item.title; 			rating = item.rating; 		poster = item.medium_cover_image; 	genre = item.genres[0]; background = item.background_image; 	content_value = item.id;
+				catalogue (hash, imdb, magnet, title, rating, poster, genre, background, /*api_url, provider, proxy,*/ content_value);												
+				i++;				
+			});	
+			// Pagination | Infinite Scrolling
+			//page=page++;
+			// Pagination | Infinite Scrolling
+			//$('#movies').append(html);
+		});	
+		
 		$.getJSON(api_url, function (data) {
 			// GET STATUS DATA
 			/*
