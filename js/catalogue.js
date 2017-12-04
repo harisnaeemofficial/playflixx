@@ -23,9 +23,12 @@ $(function () {
 		case "none": 				proxy = "";
 		case "cors-anywhere": 			proxy = ""; // https://jsfiddle.net/Ln47kyt2/3/	// FORK https://galvanize-cors-proxy.herokuapp.com/
 		case "corsio": 				proxy = "https://cors.io/?";
+		case "drysierra94326": 			proxy = "http://dry-sierra-94326.herokuapp.com/";
+		case "thingproxy": 			proxy = "https://thingproxy.freeboard.io/fetch/";
 		// https://cors-proxy.taskcluster.net
 		// http://jsonp.herokuapp.com/
 		// http://anyorigin.com/go/?url=
+		// https://jsfiddle.net/1d8cwqo0/1/
 	}
 
 	console.log("proxy: " + proxy);
@@ -110,6 +113,7 @@ $(function () {
 		switch (provider) {
 			case "torrentsapi":			protocol = "https://"; endpoint = "api.torrentsapi.com/list?"; 					type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsag": 				protocol = "https://"; endpoint = "yts.ag/api/v2/list_movies.json?"; 			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
+			case "ytsam": 				protocol = "https://"; endpoint = "yts.am/api/v2/list_movies.json?"; 			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsis": 				protocol = "https://"; endpoint = "yify.is/index.php/api/v2/list_movies.json?";	type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsph": 				protocol = "https://"; endpoint = "yts.ph/api/v2/list_movies.json?";	type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsli": 				protocol = "https://"; endpoint = "yts.li/api/v2/list_movies.json?";			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break; // NO CORS LOCAL! // IS DEAD
@@ -200,6 +204,7 @@ $(function () {
 			switch (provider) {
 				case "torrentsapi": 		json_data = data.MovieList; 	break;
 				case "ytsag": 				json_data = data.data.movies; 	break;
+				case "ytsam": 				json_data = data.data.movies; 	break;
 				case "ytsis": 				json_data = data.data.movies; 	break;
 				case "ytsph": 				json_data = data.data.movies; 	break;					
 				case "ytsli": 				json_data = data.data.movies; 	break;
@@ -219,6 +224,7 @@ $(function () {
 				switch (provider) {
 					case "torrentsapi": 		hash = item.items[0].id; 		imdb = item.imdb; 		magnet = item.items[0].torrent_magnet; 										title = item.title; 			rating = item.rating; 		poster = item.poster_med; 			genre = item.genres[0]; background = item.poster_big; 			content_value = ""; break;
 					case "ytsag": 				hash = item.torrents[0].hash; 	imdb = item.imdb_code; 	magnet = "magnet:?xt=urn:btih:"+hash+"&dn="+escape(item.title)+trackers; 	title = item.title; 			rating = item.rating; 		poster = item.medium_cover_image; 	genre = item.genres[0]; background = item.background_image; 	content_value = item.id; break;
+					case "ytsam": 				hash = item.torrents[0].hash; 	imdb = item.imdb_code; 	magnet = "magnet:?xt=urn:btih:"+hash+"&dn="+escape(item.title)+trackers; 	title = item.title; 			rating = item.rating; 		poster = item.medium_cover_image; 	genre = item.genres[0]; background = item.background_image; 	content_value = item.id; break;						
 					case "ytsis": 				hash = item.torrents[0].hash; 	imdb = item.imdb_code; 	magnet = "magnet:?xt=urn:btih:"+hash+"&dn="+escape(item.title)+trackers; 	title = item.title; 			rating = item.rating; 		poster = item.medium_cover_image; 	genre = item.genres[0]; background = item.medium_cover_image; 	content_value = item.id; break;
 					case "ytsli": 				hash = item.torrents[0].hash; 	imdb = item.imdb_code; 	magnet = "magnet:?xt=urn:btih:"+hash+"&dn="+escape(item.title)+trackers; 	title = item.title; 			rating = item.rating; 		poster = item.medium_cover_image; 	genre = item.genres[0]; background = item.background_image; 	content_value = item.id; break;
 					case "eztv_popcorntimews": 	hash = ""; 						imdb = item.imdb_id; 	magnet = ""; 																title = item.title; 			rating = ""; 				poster = item.images.poster; 		genre = ""; 			background = item.images.fanart; 		content_value = ""; break;
