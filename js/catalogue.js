@@ -26,7 +26,8 @@ $(function () {
 		case "corsio": 				proxy = "https://cors.io/?";
 		case "drysierra94326": 			proxy = "http://dry-sierra-94326.herokuapp.com/";
 		case "thingproxy": 			proxy = "https://thingproxy.freeboard.io/fetch/";
-		case "corsnowsh": 			proxy = "https://cors.now.sh/";			
+		case "corsnowsh": 			proxy = "https://cors.now.sh/";		
+		// http://goxcors.appspot.com/			
 		// https://cors-proxy.taskcluster.net
 		// http://jsonp.herokuapp.com/
 		// http://anyorigin.com/go/?url=
