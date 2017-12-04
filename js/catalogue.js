@@ -20,6 +20,7 @@ $(function () {
 	switch (proxy) {
 		case "crossorigin":			proxy = "http://crossorigin.me/";
 		case "cors-proxy": 			proxy = "http://cors-proxy.htmldriven.com/?url="; // necesita parsearse
+		case "whateverorigin": 			proxy = "http://www.whateverorigin.org/get?url="; // necesita parsearse // &callback=?
 		case "none": 				proxy = "";
 		case "cors-anywhere": 			proxy = ""; // https://jsfiddle.net/Ln47kyt2/3/	// FORK https://galvanize-cors-proxy.herokuapp.com/
 		case "corsio": 				proxy = "https://cors.io/?";
