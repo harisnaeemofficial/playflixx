@@ -15,18 +15,23 @@ $(function () {
 	var hash, imdb, magnet, title, rating, poster, genre, background;	
 	// DATASET
 
-	var proxy = "none";
+	var proxy = "corsio";
 
 	switch (proxy) {
 		case "crossorigin":			proxy = "http://crossorigin.me/";
 		case "cors-proxy": 			proxy = "http://cors-proxy.htmldriven.com/?url="; // necesita parsearse
 		case "none": 				proxy = "";
+		case "cors-anywhere": 			proxy = ""; // https://jsfiddle.net/Ln47kyt2/3/	// FORK https://galvanize-cors-proxy.herokuapp.com/
+		case "corsio": 				proxy = "https://cors.io/?";
+		// https://cors-proxy.taskcluster.net
+		// http://jsonp.herokuapp.com/
+		// http://anyorigin.com/go/?url=
 	}
 
 	console.log("proxy: " + proxy);
 	
 	var protocol = "http://";	
-	var provider = "torrentsapi";
+	var provider = "ytsag";
 
 	$("#movies_navbar").click(function() {
   		provider = "ytsis";
