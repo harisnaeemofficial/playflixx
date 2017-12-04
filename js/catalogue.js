@@ -172,7 +172,7 @@ $(function () {
 			// JSON DATA
 			$.each(json_data, function (i, item) {
 				hash = item.torrents[0].hash; 	imdb = item.imdb_code; 	magnet = "magnet:?xt=urn:btih:"+hash+"&dn="+escape(item.title)+trackers; 	title = item.title; 			rating = item.rating; 		poster = item.medium_cover_image; 	genre = item.genres[0]; background = item.background_image; 	content_value = item.id;
-				catalogue (hash, imdb, magnet, title, rating, poster, genre, background, /*api_url, provider, proxy,*/ content_value);												
+				catalogue (hash, imdb, magnet, title, rating, poster, genre, background, content_value); // api_url, provider, proxy											
 				i++;				
 			});	
 			// Pagination | Infinite Scrolling
