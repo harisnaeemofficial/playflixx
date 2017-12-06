@@ -18,16 +18,16 @@ $(function () {
 	var proxy = "corsio";
 
 	switch (proxy) {
-		case "crossorigin":			proxy = "http://crossorigin.me/";
-		case "cors-proxy": 			proxy = "http://cors-proxy.htmldriven.com/?url="; // necesita parsearse
-		case "whateverorigin": 			proxy = "http://www.whateverorigin.org/get?url="; // necesita parsearse // &callback=?
-		case "none": 				proxy = "";
+		case "crossorigin":			proxy = "http://crossorigin.me/"; break;
+		case "cors-proxy": 			proxy = "http://cors-proxy.htmldriven.com/?url="; break; // necesita parsearse
+		case "whateverorigin": 			proxy = "http://www.whateverorigin.org/get?url="; break; // necesita parsearse // &callback=?
+		case "none": 				proxy = ""; break;
 		case "cors-anywhere": 			proxy = ""; // https://jsfiddle.net/Ln47kyt2/3/	// FORK https://galvanize-cors-proxy.herokuapp.com/
-		case "corsio": 				proxy = "https://cors.io/?";
-		case "drysierra94326": 			proxy = "http://dry-sierra-94326.herokuapp.com/";
-		case "thingproxy": 			proxy = "https://thingproxy.freeboard.io/fetch/";
-		case "corsnowsh": 			proxy = "https://cors.now.sh/";	
-		case "freecorsproxy": 			proxy = "https://free-cors-proxy.herokuapp.com";				
+		case "corsio": 				proxy = "https://cors.io/?"; break;
+		case "drysierra94326": 			proxy = "http://dry-sierra-94326.herokuapp.com/"; break;
+		case "thingproxy": 			proxy = "https://thingproxy.freeboard.io/fetch/"; break;
+		case "corsnowsh": 			proxy = "https://cors.now.sh/";	break;
+		case "freecorsproxy": 			proxy = "https://free-cors-proxy.herokuapp.com"; break;				
 		// http://goxcors.appspot.com/			
 		// https://cors-proxy.taskcluster.net
 		// http://jsonp.herokuapp.com/
