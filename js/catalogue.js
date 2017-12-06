@@ -15,7 +15,7 @@ $(function () {
 	var hash, imdb, magnet, title, rating, poster, genre, background;	
 	// DATASET
 
-	var proxy = "corsio";
+	var proxy = "drysierra94326";
 
 	switch (proxy) {
 		case "crossorigin":			proxy = "http://crossorigin.me/"; break;
