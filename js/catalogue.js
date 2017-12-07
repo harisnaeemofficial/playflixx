@@ -116,6 +116,7 @@ $(function () {
 		
 
 		switch (provider) {
+			// case "torrentsapi":			protocol = "https://"; endpoint = "yts.to/api/v2/list_movies.json?"; 					type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "torrentsapi":			protocol = "https://"; endpoint = "api.torrentsapi.com/list?"; 					type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsag": 				protocol = "https://"; endpoint = "yts.ag/api/v2/list_movies.json?"; 			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsam": 				protocol = "https://"; endpoint = "yts.am/api/v2/list_movies.json?"; 			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
