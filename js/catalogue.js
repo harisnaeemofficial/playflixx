@@ -19,10 +19,10 @@ $(function () {
 
 	switch (proxy) {
 		case "crossorigin":			proxy = "http://crossorigin.me/"; break;
-		case "cors-proxy": 			proxy = "http://cors-proxy.htmldriven.com/?url="; break; // necesita parsearse
+		case "corsproxy": 			proxy = "http://cors-proxy.htmldriven.com/?url="; break; // necesita parsearse
 		case "whateverorigin": 			proxy = "http://www.whateverorigin.org/get?url="; break; // necesita parsearse // &callback=?
 		case "none": 				proxy = ""; break;
-		case "cors-anywhere": 			proxy = ""; // https://jsfiddle.net/Ln47kyt2/3/	// FORK https://galvanize-cors-proxy.herokuapp.com/
+		case "corsanywhere": 			proxy = ""; // https://jsfiddle.net/Ln47kyt2/3/	// FORK https://galvanize-cors-proxy.herokuapp.com/
 		case "corsio": 				proxy = "https://cors.io/?"; break;
 		case "drysierra94326": 			proxy = "http://dry-sierra-94326.herokuapp.com/"; break;
 		case "thingproxy": 			proxy = "https://thingproxy.freeboard.io/fetch/"; break;
@@ -33,6 +33,7 @@ $(function () {
 		case "gobetween": 			proxy = "http://gobetween.oklabs.org/pipe/"; break;
 		case "corshyooru": 			proxy = "http://cors.hyoo.ru/"; break;
 		case "cors4js": 			proxy = "https://cors4js.appspot.com/?url="; break;
+		case "fuckcors": 			proxy = "http://fuck-cors.com/?url="; break;
 		// http://goxcors.appspot.com/			
 		// https://cors-proxy.taskcluster.net
 		// http://jsonp.herokuapp.com/
