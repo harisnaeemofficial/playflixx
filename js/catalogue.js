@@ -282,7 +282,13 @@ $(function () {
 	// Pagination | Infinite Scrolling
 });
 
+/*
 
+// SHOWS
+
+var url = 'http://api.torrentsapi.com/shows?cb='+Math.random()+'&sort=seeds&page=' + ui.home.catalog.page;
+
+*/
 /*
 
 SUBTITLES
