@@ -32,6 +32,7 @@ $(function () {
 		case "corsifyme": 			proxy = "http://www.corsify.me/"; break;
 		case "gobetween": 			proxy = "http://gobetween.oklabs.org/pipe/"; break;
 		case "corshyooru": 			proxy = "http://cors.hyoo.ru/"; break;
+		case "cors4js": 			proxy = "https://cors4js.appspot.com/?url="; break;
 		// http://goxcors.appspot.com/			
 		// https://cors-proxy.taskcluster.net
 		// http://jsonp.herokuapp.com/
