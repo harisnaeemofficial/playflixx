@@ -124,7 +124,7 @@ $(function () {
 		
 
 		switch (provider) {
-			// case "torrentsapi":			protocol = "https://"; endpoint = "yts.to/api/v2/list_movies.json?"; 					type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
+			// case "ytsto":				protocol = "https://"; endpoint = "yts.to/api/v2/list_movies.json?"; 					type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "torrentsapi":			protocol = "https://"; endpoint = "api.torrentsapi.com/list?"; 					type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsag": 				protocol = "https://"; endpoint = "yts.ag/api/v2/list_movies.json?"; 			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
 			case "ytsam": 				protocol = "https://"; endpoint = "yts.am/api/v2/list_movies.json?"; 			type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
@@ -142,6 +142,7 @@ $(function () {
 			case "ptapitsxaabevfvk": 	        protocol = "https://"; endpoint = "ptapitsxaabevfvk.onion.to/shows/";			type_value = "";	page_key = "";			parameters = ""; 				 break;
 			case "butter": 				protocol = "http://";  endpoint = "butter.vodo.net/popcorn";					type_value = "";	page_key = "";			parameters = ""; 				 break;
 			case "torrentsapishows": 	        protocol = "https://"; endpoint = "api.torrentsapi.com/shows?cb=";				type_value = "";	page_key = "&page=";	parameters = sort+quality+limit; break;
+			// http://yts.re/api/list.json?sort=seeds&limit=50
 		}	
 
 		var page = page_key+page_value;
