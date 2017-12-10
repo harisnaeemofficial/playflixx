@@ -37,6 +37,7 @@ $(function () {
 		// http://anyorigin.com/go/?url=
 		// https://jsfiddle.net/1d8cwqo0/1/
 		// http://corsy.rs.af.cm/?get=
+		// https://crossproxy.me/
 	}
 
 	console.log("proxy: " + proxy);
