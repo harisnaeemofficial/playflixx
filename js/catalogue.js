@@ -408,3 +408,42 @@ fetcher.scrappers.ysubs = function(movie_id, callback){
 
 
 */
+
+/*
+
+// TRACKERS
+
+
+Torrent Tracker	Port	Tracker Name
+http://9.rarbg.com:2710/announceUDP	2707	RARBG
+http://announce.torrentsmd.com:6969/announceUDP	6969	torrentsmd.com
+udp://castradio.net:6969/announceUDP	6969	Cast Radio
+http://castradio.net:6969/announceUDP	6969	Cast Radio
+udp://tracker.coppersurfer.tk:6969/announceUDP	6969	coppersurfer.tk
+http://tracker.coppersurfer.tk:6969/announceUDP	6969	coppersurfer.tk
+udp://coppersurfer.tk:6969/announceUDP	6969	coppersurfer.tk
+http://coppersurfer.tk:6969/announceUDP	6969	coppersurfer.tk
+udp://open.demonii.com:1337/announceUDP	1337	Demonii
+udp://open.demonii.com:6969/announceUDP	6969	Demonii
+http://open.demonii.com:1337/announceUDP	1337	Demonii
+http://open.demonii.com:6969/announceUDP	6969	Demonii
+udp://exodus.desync.com:80/announceUDP	80	Exodus
+udp://exodus.desync.com:6969/announceUDP	6969	Exodus
+udp://tracker.glotorrents.com:6969/announceUDP	6969	glotorrents.com
+http://tracker.glotorrents.com:6969/announceUDP	6969	glotorrents.com
+udp://tracker.leechers-paradise.org:80/announceUDP	80	Leechers-Paradise
+udp://tracker.leechers-paradise.org:6969/announceUDP	6969	Leechers-Paradise
+http://tracker.leechers-paradise.org:80/announceUDP	80	Leechers-Paradise
+http://tracker.leechers-paradise.org:6969/announceUDP	6969	Leechers-Paradise
+udp://tracker.openbittorrent.com:80/announceUDP	80	OpenBitTorrent
+udp://tracker.openbittorrent.com:6969/announceUDP	6969	OpenBitTorrent
+http://tracker.openbittorrent.com:80/announceUDP	80	OpenBitTorrent
+http://tracker.openbittorrent.com:6969/announceUDP	6969	OpenBitTorrent
+udp://tracker.publicbt.com:80/announceUDP	80	PublicBitTorrent
+udp://tracker.publicbt.com:6969/announceUDP	6969	PublicBitTorrent
+http://tracker.publicbt.com:80/announceUDP	80	PublicBitTorrent
+http://tracker.publicbt.com:6969/announceUDP	6969	PublicBitTorrent
+udp://tracker.x4w.co:6969/announceUDP	6969	x4w.co
+http://tracker.x4w.co:6969/announceUDP	6969	x4w.co
+
+*/
