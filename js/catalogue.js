@@ -29,6 +29,7 @@ $(function () {
 		case "corsnowsh": 			proxy = "https://cors.now.sh/";	break;
 		case "freecorsproxy": 			proxy = "https://free-cors-proxy.herokuapp.com"; break;
 		case "corsproxyourbuildo": 		proxy = "https://corsproxy.our.buildo.io"; break;
+		case "corsifyme": 			proxy = "http://www.corsify.me/"; break;
 		// http://goxcors.appspot.com/			
 		// https://cors-proxy.taskcluster.net
 		// http://jsonp.herokuapp.com/
