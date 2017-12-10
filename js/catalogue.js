@@ -34,7 +34,7 @@ $(function () {
 		case "corshyooru": 			proxy = "http://cors.hyoo.ru/"; break;
 		case "cors4js": 			proxy = "https://cors4js.appspot.com/?url="; break;
 		case "fuckcors": 			proxy = "http://fuck-cors.com/?url="; break;
-		case "fuckcors": 			proxy = "https://proxy-sauce.glitch.me/"; break;			
+		case "proxysauce": 			proxy = "https://proxy-sauce.glitch.me/"; break;			
 		// http://goxcors.appspot.com/			
 		// https://cors-proxy.taskcluster.net
 		// http://jsonp.herokuapp.com/
