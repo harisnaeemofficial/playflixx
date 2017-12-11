@@ -1,0 +1,171 @@
+body
+{
+	font-family: arial, sans-serif;
+	font-size: 14px;
+	background-color: #F1F1F1;
+}
+#viewings_calendar
+{
+	margin-top: 5px;
+	padding-top: 2em;
+}
+
+#viewings_calendar h2
+{
+	font-size: 1.5em;
+	margin-top: 0;
+}
+
+#viewings_calendar .left, #viewings_calendar .right
+{
+	padding-right: 1.2em;
+	padding-left: 1.2em;	
+}
+
+#viewings_calendar .left #resumen
+{
+	padding: 1.2em;
+	background-color: #FFF;
+}
+
+#viewings_calendar #how_to
+{
+	padding-top: 1em;
+}
+
+#viewings_calendar #pasos
+{
+	margin-top: 1.2em;
+}
+
+#viewings_calendar #ficha
+{
+	border: 1px solid #F1F1F1;
+	margin-top: 1.2em;
+}
+
+#viewings_calendar #form-container
+{
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+#viewings_calendar #form-container .col-md-6
+{
+	background-color: #fff;
+}
+
+#viewings_calendar #form-container h3
+{
+	background-color: #27A7E6;
+	color: #fff;
+	padding: 0.8em 1em 0.7em 1em;
+	margin-bottom: 1.2em;
+}
+
+#viewings_calendar #agenda
+{
+	background-color: #fff;
+	padding: 1.2em;	
+}
+
+#viewings_calendar #agenda ul
+{
+	padding: 0;
+}
+
+#viewings_calendar #agenda .semana
+{
+	background-color: #F1F1F1;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	margin-bottom: 0;
+}
+
+#viewings_calendar #agenda .dia
+{
+	border-bottom: 1px solid #F1F1F1;
+}
+
+#viewings_calendar #agenda .dia li
+{
+	display: inline-block;
+	padding-left: 1.2em;
+	padding-right: 1.2em;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	font-size: 1.2em;
+	background-color: #EEE;
+}
+
+#viewings_calendar #agenda .dia li:hover
+{
+	cursor: pointer;
+	background-color: #CCC;
+}
+
+#viewings_calendar #agenda .dia li.active:hover
+{
+	background-color: #BBB;
+}
+
+#viewings_calendar #agenda .dia li.active
+{
+	background-color: #CCC;
+}
+
+#viewings_calendar #agenda .dia li span
+{
+	display: block;
+}
+
+#viewings_calendar #agenda .fecha
+{
+	text-align: center;
+	border-bottom: 1px solid #F1F1F1;
+	padding-bottom: 0.8em;
+	clear: both;
+}
+
+#viewings_calendar #agenda .hora li
+{
+	width: 50%;
+	display: inline-block;
+	float: left;
+	line-height: 2.5em;
+	border-bottom: 1px solid #F1F1F1;
+}
+
+#viewings_calendar #agenda .hora li:hover
+{
+	cursor: pointer;
+	background-color: #CCC!important;
+}
+
+#viewings_calendar #agenda .hora li.active
+{
+	background-color: #EEE;
+}
+
+#viewings_calendar #agenda button
+{
+	margin-top: 1.2em;
+}
+
+
+@media screen and (max-width: 768px)
+{
+  #viewings_calendar #agenda .dia li
+	{
+		display: inline-block;
+		padding: 0.5em;
+		font-size: 0.8em;
+		background-color: #EEE;
+	}
+
+	#viewings_calendar .right
+	{
+		padding: 1em;
+	}
+
+}
