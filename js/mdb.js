@@ -1,6 +1,7 @@
 // http://www.imdb.com/interfaces/
 
 // http://www.omdbapi.com
+// http://www.omdbapi.com/?t=Rogue+One&plot=full&r=json
 /*
     $.getJSON("http://omdbapi.com/?t=" + movie.Title(), {
             api_key: '7a5035cca9022ea67734112eb921d5d33680a63d'
@@ -14,7 +15,10 @@
 
 // https://theimdbapi.org/api/find/movie?title=transformers&year=2007
 
+// http://imdbapi.org/
+
 // https://www.themoviedb.org/documentation/api
+// https://api.themoviedb.org/3/search/movie?api_key={YourAPIKey}&query=Rogue%20One:%20A%20Star%20Wars%20Story
 
 // https://imdb.p.mashape.com/movie | https://market.mashape.com/apathetic/imdb
 
@@ -25,3 +29,10 @@
 // http://imdbapi.poromenos.org/ #CHECKTHISOUT
 
 // https://rapidapi.com/user/professorhaseeb/package/Movie%20Database/ https://omovies.p.mashape.com/movie/tt0088247?mashape-key=6VqHPbVfAAmsh0iiJs1z7MDFuI8xp15WVXIjsnR7Ioh5gA3gAt
+
+// http://imdbapi.net/api?key=wDdtUzBfQDAoz6GowRFxIHxQtuOm7i&id=tt5817168&type=json
+
+// http://www.imdbapi.com/?t=Hangover
+
+// http://au1994-heroku.herokuapp.com/movies/get/tt0137523/
+// http://au1994-heroku.herokuapp.com/movies/search/?q=movie&page=1
